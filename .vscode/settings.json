@@ -3,6 +3,8 @@
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.colorDecorators": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.autoClosingQuotes": "languageDefined",
   "editor.autoClosingBrackets": "languageDefined",
   "editor.autoClosingComments": "languageDefined",
