@@ -1,18 +1,60 @@
 {
+  // editor settings
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.colorDecorators": true,
   "editor.cursorBlinking": "smooth",
+  "editor.defaultColorDecorators": "auto",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.autoClosingQuotes": "languageDefined",
   "editor.autoClosingBrackets": "languageDefined",
   "editor.autoClosingComments": "languageDefined",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.colorDecoratorsActivatedOn": "clickAndHover",
+  // explore settings
+  "explorer.compactFolders": true,
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
+  //  language settings
+  // javascript settings
+  "javascript.format.enable": true,
+  "javascript.autoClosingTags": true,
+  "javascript.suggest.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  // typescript settings
+  "typescript.locale": "auto",
+  "typescript.format.enable": true,
+  "typescript.suggest.enabled": true,
+  "typescript.autoClosingTags": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.check.npmIsInstalled": true,
+  "typescript.tsserver.watchOptions": "vscode",
+  "typescript.suggest.completeFunctionCalls": true,
+  // markdown
+  "markdown.math.enabled": true,
+  "markdown.validate.enabled": false,
+  "markdown.suggest.paths.enabled": true,
+  "markdown.links.openLocation": "currentGroup",
+  "markdown.preview.doubleClickToSwitchToEditor": true,
+  // json
+  "json.format.enable": true,
+  "json.format.keepLines": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // terminal settings
+  "terminal.integrated.cursorBlinking": false,
+  "terminal.integrated.smoothScrolling": true,
+  // git settings
+  "git.smartCommitChanges": "all",
+  "git.decorations.enabled": true,    
+  // github settings
+  "github.showAvatar": true,
 }

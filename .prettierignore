@@ -1,0 +1,25 @@
+# Build outputs
+.next
+dist
+build
+coverage
+
+# Dependencies
+node_modules
+
+# Assets
+public/fonts
+public/images
+public/videos
+
+# Configs & Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.env*
+
+# Editor & System
+.DS_Store
+.vscode
+.idea
+*.log
