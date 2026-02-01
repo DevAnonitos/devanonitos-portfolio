@@ -17,4 +17,10 @@ export const PROJECTS = [
   // Add more projects here
 ];
 
+export const RESEARCHS = [
+  {
+    
+  }
+]
+
 export const PROJECT_CATEGORIES = ["All", "Web App", "Mobile", "UI/UX", "Open Source"];
