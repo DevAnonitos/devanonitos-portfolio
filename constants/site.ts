@@ -3,8 +3,9 @@
  */
 export const SITE_CONFIG = {
   title: "DevAnonitos | Portfolio",
+  author: "DevAnonitos",
   description: "A professional portfolio showcasing expertise in modern web development, UI/UX design, and innovative digital solutions.",
-  url: "https://devanonitos.com",
+  url: "",
   ogImage: "/og-image.jpg",
   keywords: [
     "Software Engineer",
@@ -12,6 +13,7 @@ export const SITE_CONFIG = {
     "React Specialist",
     "Next.js Portfolio",
     "Web Design",
+    "Research"
   ],
   locale: "en_US",
   type: "website",

@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   compress: true,
-  output: 'export',
+  output: 'standalone',
   trailingSlash: true,
   cacheComponents: true,
   reactStrictMode: true,
