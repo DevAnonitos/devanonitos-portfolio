@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "devanonitos portfolio",
+  "fluid": true,
+  "cleanUrls": true,
+  "framework": "nextjs",
+  "devCommand": "next dev",
+  "buildCommand": "next build",
+  "installCommand": "npm install",
+  "git": {
+    "autoJobCancelation": false,
+    "deploymentEnabled": {
+      "dev": false
+    }
+  }
+}
