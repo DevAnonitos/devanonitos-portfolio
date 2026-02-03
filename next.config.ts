@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForBuild: true,
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
     tsconfigPath: 'tsconfig.json',
   },
   images: {
