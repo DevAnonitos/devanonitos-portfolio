@@ -1,0 +1,24 @@
+version: 2
+
+triggerPaths:
+  - "package.json"
+  - "package-lock.json"
+
+issueRules:
+  didYouMean: true
+  installScripts: true
+  telemetry: true
+  troll: true
+  malware: true
+  hasNativeCode: true
+  shellScriptOverride: true
+  gitDependency: true
+  httpDependency: true
+  invalidPackageJSON: true
+  unresolvedRequire: true
+
+githubApp:
+  enabled: true 
+  projectReportsEnabled: true
+  pullRequestAlertsEnabled: true
+  dependencyOverviewEnabled: true
