@@ -7,8 +7,10 @@
     pkgs.nodejs_20
     pkgs.typescript
   ];
-  idx.extensions = [
-    
+  idx.extensions = [ 
+    "bradlc.vscode-tailwindcss"
+    "esbenp.prettier-vscode"
+    "GitHub.vscode-pull-request-github"
   ];
   idx.previews = {
     previews = {
