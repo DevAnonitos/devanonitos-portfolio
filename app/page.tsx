@@ -1,11 +1,10 @@
 import Image from "next/image";
+import { HeroSection } from "@/components/sections";
 
 export default function Home() {
   return (
-    <div className="">
-      <h1>
-        Hello Section
-      </h1>
+    <div className="py-16">
+      <HeroSection />
     </div>
   );
 }

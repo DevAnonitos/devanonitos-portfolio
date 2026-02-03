@@ -123,3 +123,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .navbar {
+    @apply fixed top-0 w-full h-16 z-50 flex items-center justify-center border-b border-gray-200;
+  }
+  .footer {
+    @apply w-full h-20 border-t border-gray-200 flex items-center justify-center border-t border-gray-200;
+  }
+}
+
+@layer components {
+  
+}
+
+@-o-viewport {
+  width: device-width;
+  height: device-height;
+}
+
+@viewport {
+  width: device-width;
+  height: device-height;
+}

@@ -5,9 +5,9 @@ import { NAV_LINKS } from '@/constants/navigation';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full z-50">
+    <nav className="navbar">
       <div className="container mx-auto">
-        {/* Logo and Menu Links */}
+        Navbar
       </div>
     </nav>
   );

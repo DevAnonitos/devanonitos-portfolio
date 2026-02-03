@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full py-10">
-      <div className="container mx-auto text-center">
-        {/* Copyright and Footer Links */}
+    <footer className="footer">
+      <div className="container mx-auto">
+        Footer
       </div>
     </footer>
   );
