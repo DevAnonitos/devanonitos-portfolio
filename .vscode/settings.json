@@ -13,24 +13,40 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.colorDecoratorsActivatedOn": "clickAndHover",
   // explore settings
+  "explorer.autoReveal": true,
   "explorer.compactFolders": true,
+  "explorer.openEditors.visible": 9,
   "explorer.decorations.badges": true,
   "explorer.decorations.colors": true,
+  "explorer.fileNesting.enabled": false,
   //  language settings
   // javascript settings
+  "javascript.preferences.organizeImports": {
+
+  },
   "javascript.format.enable": true,
   "javascript.autoClosingTags": true,
   "javascript.suggest.enabled": true,
+  "javascript.suggest.autoImports": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": false,
   // typescript settings
+  "typescript.preferences.organizeImports": {
+
+  },
   "typescript.locale": "auto",
+  "typescript.suggest.paths": true,
   "typescript.format.enable": true,
   "typescript.suggest.enabled": true,
   "typescript.autoClosingTags": true,
   "typescript.suggest.autoImports": true,
   "typescript.check.npmIsInstalled": true,
+  "typescript.suggest.completeJSDocs": true,
   "typescript.tsserver.watchOptions": "vscode",
   "typescript.suggest.completeFunctionCalls": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
   // markdown
   "markdown.math.enabled": true,
   "markdown.validate.enabled": false,
@@ -50,11 +66,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // terminal settings
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.enableFileLinks": "on",
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.smoothScrolling": true,
   // git settings
   "git.smartCommitChanges": "all",
-  "git.decorations.enabled": true,    
+  "git.decorations.enabled": true, 
+  "git.autoRepositoryDetection": true,   
   // github settings
   "github.showAvatar": true,
 }

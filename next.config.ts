@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
       'tailwind-merge',
       '@radix-ui/react-icons',
     ],
+    turbopackFileSystemCacheForDev: true,
+    turbopackFileSystemCacheForBuild: true,
   },
   typescript: {
     ignoreBuildErrors: false,
