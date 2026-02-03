@@ -1,7 +1,16 @@
 {
   "name": "devanonitos-portfolio",
+  "author": "DevAnonitos",
   "version": "0.1.0",
   "private": true,
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "portfolio",
+    "devanonitos"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

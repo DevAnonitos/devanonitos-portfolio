@@ -3,7 +3,7 @@
  */
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
+  { label: "Abouts", href: "/#abouts" },
   { label: "Skills", href: "/#skills" },
   { label: "Projects", href: "/#projects" },
   { label: "Experience", href: "/#experience" },
@@ -22,7 +22,7 @@ export const FOOTER_LINKS = [
   {
     title: "Company",
     links: [
-      { label: "About Me", href: "/about" },
+      { label: "About Me", href: "/abouts" },
       { label: "Services", href: "/services" },
       { label: "Privacy Policy", href: "/privacy" },
     ],

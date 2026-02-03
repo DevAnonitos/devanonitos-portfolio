@@ -1,7 +1,8 @@
-import "./globals.css";
+import "../styles/globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { SITE_CONFIG } from "@/constants/site";
+import { AppLayout } from "@/components/layout";
+import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,26 +14,54 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: SITE_CONFIG.title,
-  authors: { name: SITE_CONFIG.author },
-  description: SITE_CONFIG.description,
-  keywords: SITE_CONFIG.keywords,
-  icons: {
-    icon: "/favicon.ico",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: SITE_CONFIG.url,
-    languages: {
-      "en-US": SITE_CONFIG.url,
-      "vi-VN": SITE_CONFIG.url,
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: { 
+      default: SITE_CONFIG.title, 
+      absolute: SITE_CONFIG.title, 
+      template: `%s | ${SITE_CONFIG.title}`,
     },
-  },
-};
+    authors: { name: SITE_CONFIG.author },
+    description: SITE_CONFIG.description,
+    keywords: SITE_CONFIG.keywords,
+    icons: {
+      icon: "/favicon.ico",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: SITE_CONFIG.url,
+      languages: {
+        "en-US": SITE_CONFIG.url,
+        "vi-VN": SITE_CONFIG.url,
+      },
+    },
+    openGraph: {
+      title: SITE_CONFIG.title,
+      description: SITE_CONFIG.description,
+      url: SITE_CONFIG.url,
+      siteName: SITE_CONFIG.title,
+      images: [
+        {
+          url: SITE_CONFIG.ogImage,
+          width: 1200,
+          height: 630,
+          alt: SITE_CONFIG.title,
+        },
+      ],
+      locale: SITE_CONFIG.locale,
+      type: SITE_CONFIG.type,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: SITE_CONFIG.title,
+      description: SITE_CONFIG.description,
+      images: [SITE_CONFIG.ogImage],
+    },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -44,7 +73,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AppLayout>
+          {children}
+        </AppLayout>
       </body>
     </html>
   );

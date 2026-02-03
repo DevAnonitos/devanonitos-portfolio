@@ -2,7 +2,7 @@
  * General site configuration and SEO metadata
  */
 export const SITE_CONFIG = {
-  title: "DevAnonitos | Portfolio",
+  title: "DevAnonitos Portfolio",
   author: "DevAnonitos",
   description: "A professional portfolio showcasing expertise in modern web development, UI/UX design, and innovative digital solutions.",
   url: "",
@@ -16,5 +16,5 @@ export const SITE_CONFIG = {
     "Research"
   ],
   locale: "en_US",
-  type: "website",
+  type: "website" as const,
 };

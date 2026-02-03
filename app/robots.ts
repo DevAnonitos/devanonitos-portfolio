@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { SITE_CONFIG } from '@/constants/site'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = SITE_CONFIG.url || 'https://devanonitos.com' 
+  const baseUrl = SITE_CONFIG.url || 'http://localhost:3000' 
 
   return {
     rules: [

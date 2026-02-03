@@ -2,13 +2,13 @@ import type { MetadataRoute } from 'next'
 import { SITE_CONFIG } from '@/constants/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_CONFIG.url || 'https://devanonitos.com'
+  const baseUrl = SITE_CONFIG.url || 'http://localhost:3000'
   const lastModified = new Date()
 
   const routes = [
     '',
     '/projects',
-    '/about',
+    '/abouts',
     '/contact',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
