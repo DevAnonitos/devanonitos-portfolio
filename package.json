@@ -1,8 +1,10 @@
 {
   "name": "devanonitos-portfolio",
+  "description": "Modern performance-first portfolio website built with Next.js, TypeScript, and Tailwind CSS.",
   "author": "DevAnonitos",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "keywords": [
     "nextjs",
     "react",
@@ -11,6 +13,18 @@
     "portfolio",
     "devanonitos"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevAnonitos/devanonitos-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DevAnonitos/devanonitos-portfolio/issues"
+  },
+  "homepage": "https://github.com/DevAnonitos/devanonitos-portfolio#readme",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
