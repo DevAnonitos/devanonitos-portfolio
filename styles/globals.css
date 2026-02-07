@@ -126,23 +126,100 @@
 
 @layer utilities {
   .navbar {
-    @apply fixed top-0 w-full h-16 z-50 flex items-center justify-center border-b border-gray-200;
+    @apply fixed top-0 z-50 flex h-16 w-full items-center justify-center border-b border-gray-200;
   }
   .footer {
-    @apply w-full h-20 border-t border-gray-200 flex items-center justify-center border-t border-gray-200;
+    @apply flex h-20 w-full items-center justify-center border-t border-gray-200;
+  }
+  .text-gradient {
+    @apply from-foreground to-muted-foreground bg-gradient-to-r bg-clip-text text-transparent;
+  }
+  .border-gradient {
+    @apply border border-transparent bg-origin-border;
+    background-image:
+      linear-gradient(var(--background), var(--background)),
+      linear-gradient(135deg, color-mix(in oklch, var(--primary) 60%, white), var(--accent));
+    background-clip: padding-box, border-box;
   }
 }
 
 @layer components {
-  
-}
-
-@-o-viewport {
-  width: device-width;
-  height: device-height;
-}
-
-@viewport {
-  width: device-width;
-  height: device-height;
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-14 sm:py-16 lg:py-24;
+  }
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl;
+  }
+  .section-subtitle {
+    @apply text-muted-foreground mt-3 max-w-2xl text-base sm:text-lg;
+  }
+  .text-display {
+    @apply text-4xl leading-tight font-semibold tracking-tight sm:text-5xl lg:text-6xl;
+  }
+  .text-title {
+    @apply text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl;
+  }
+  .text-heading {
+    @apply text-xl font-semibold tracking-tight sm:text-2xl;
+  }
+  .text-body {
+    @apply text-muted-foreground text-base leading-relaxed sm:text-lg;
+  }
+  .text-caption {
+    @apply text-muted-foreground text-sm;
+  }
+  .text-overline {
+    @apply text-muted-foreground text-xs font-medium tracking-[0.2em] uppercase;
+  }
+  .card-surface {
+    @apply border-border/60 bg-card/80 rounded-3xl border shadow-sm backdrop-blur-sm;
+  }
+  .card-raise {
+    @apply border-border/60 bg-card rounded-3xl border shadow-lg shadow-black/5 transition-transform duration-300 hover:-translate-y-1;
+  }
+  .pill {
+    @apply border-border/60 bg-muted/60 text-foreground inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium;
+  }
+  .badge-soft {
+    @apply bg-primary/10 text-primary inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .btn {
+    @apply focus-visible:ring-ring focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+  .btn-primary {
+    @apply focus-visible:ring-ring focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none;
+    @apply bg-foreground text-background hover:bg-foreground/90;
+  }
+  .btn-secondary {
+    @apply focus-visible:ring-ring focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none;
+    @apply border-border/70 bg-background hover:bg-muted/70 border;
+  }
+  .btn-ghost {
+    @apply focus-visible:ring-ring focus-visible:ring-offset-background inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none;
+    @apply text-foreground hover:bg-muted/60 bg-transparent;
+  }
+  .link-muted {
+    @apply text-muted-foreground hover:text-foreground underline-offset-4 hover:underline;
+  }
+  .input-base {
+    @apply border-border/70 bg-background text-foreground focus:border-primary focus:ring-ring/40 w-full rounded-2xl border px-4 py-3 text-sm shadow-sm transition focus:ring-2;
+  }
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground text-sm font-medium transition;
+  }
+  .chip {
+    @apply border-border/60 bg-background text-foreground inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium;
+  }
+  .grid-soft {
+    @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  .stack {
+    @apply flex flex-col gap-6;
+  }
+  .hero-card {
+    @apply border-border/60 from-background via-background to-muted/50 rounded-[32px] border bg-gradient-to-br p-8 shadow-xl shadow-black/5;
+  }
 }
