@@ -11,6 +11,7 @@
     "bradlc.vscode-tailwindcss"
     "esbenp.prettier-vscode"
     "GitHub.vscode-pull-request-github"
+    "dsznajder.es7-react-js-snippets"
   ];
   idx.previews = {
     previews = {
