@@ -1,12 +1,13 @@
 docs:
   - changed-files:
-    - any-glob-to-any-file: 
+    - all-globs-to-all-files: 
       - '**/*.md'
+      - '**/*.mdc'
       - '**/*.mdx'
 
 styles:
   - changed-files:
-    - any-glob-to-any-file:
+    - all-globs-to-all-files:
       - '**/*.css'
       - '**/*.scss'
       - '**/*.module.css'
@@ -32,11 +33,33 @@ config:
       - 'tsconfig.*'
       - 'next.config.*'
 
+ui:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'components/**'
+      - 'src/components/**'
+
+app-router:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'app/**'
+      - 'src/app/**'
+
 feature:
-  - head-branch: ['^feature']
+  - all:
+    - head-branch: ['^feature', '^feat']
+    - changed-files:
+      - any-glob-to-any-file:
+        - 'src/**'
+        - 'app/**'
 
 bug:
-  - head-branch: ['^fix', '^bug']
+  - all:
+    - head-branch: ['^fix', '^bug']
+    - changed-files:
+      - any-glob-to-any-file:
+        - 'src/**'
+        - 'app/**'
 
 perf:
   - head-branch: ['^perf']
@@ -45,7 +68,13 @@ chore:
   - head-branch: ['^chore']
 
 deps:
-  - head-branch: ['^deps', '^upgrade']
+  - all:
+    - head-branch: ['^deps', '^upgrade']
+    - changed-files:
+      - any-glob-to-any-file:
+        - 'package.json'
+        - 'package-lock.json'
+        - 'yarn.lock'
 
 wip:
   - head-branch: ['^wip']
@@ -54,4 +83,8 @@ hotfix:
   - head-branch: ['^hotfix']
 
 release:
-  - base-branch: 'main'
+  - all:
+    - base-branch: 'main'
+    - changed-files:
+        - any-glob-to-any-file:
+          - 'CHANGELOG.md'
