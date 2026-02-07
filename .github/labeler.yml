@@ -1,0 +1,38 @@
+docs:
+  - changed-files:
+    - any-glob-to-any-file: '**/*.md'
+
+styles:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.css'
+      - '**/*.scss'
+      - '**/*.module.css'
+
+test:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.test.*'
+      - '**/*.spec.*'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+config:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.json'
+      - '**/*.env*'
+      - 'tsconfig.*'
+      - 'next.config.*'
+
+feature:
+  - head-branch: ['^feature']
+
+bug:
+  - head-branch: ['^fix', '^bug']
+
+release:
+  - base-branch: 'main'
