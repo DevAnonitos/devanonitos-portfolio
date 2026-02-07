@@ -1,6 +1,8 @@
 docs:
   - changed-files:
-    - any-glob-to-any-file: '**/*.md'
+    - any-glob-to-any-file: 
+      - '**/*.md'
+      - '**/*.mdx'
 
 styles:
   - changed-files:
@@ -8,12 +10,14 @@ styles:
       - '**/*.css'
       - '**/*.scss'
       - '**/*.module.css'
+      - '**/*.tailwind.*'
 
 test:
   - changed-files:
     - any-glob-to-any-file:
       - '**/*.test.*'
       - '**/*.spec.*'
+      - '**/__tests__/**'
 
 ci:
   - changed-files:
@@ -33,6 +37,21 @@ feature:
 
 bug:
   - head-branch: ['^fix', '^bug']
+
+perf:
+  - head-branch: ['^perf']
+
+chore:
+  - head-branch: ['^chore']
+
+deps:
+  - head-branch: ['^deps', '^upgrade']
+
+wip:
+  - head-branch: ['^wip']
+
+hotfix:
+  - head-branch: ['^hotfix']
 
 release:
   - base-branch: 'main'
