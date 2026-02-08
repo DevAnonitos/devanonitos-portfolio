@@ -18,18 +18,19 @@ export const NAV_CTA = {
 
 export const FOOTER_LINKS = [
   {
-    title: 'Project',
+    title: 'Projects',
     links: [
-      { label: 'Case Studies', href: '/projects' },
-      { label: 'Open Source', href: '/open-source' },
+      { label: 'Featured Work', href: '/#projects' },
+      { label: 'All Projects', href: '/projects' },
+      { label: 'Work Process', href: '/#experience' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About Me', href: '/abouts' },
-      { label: 'Services', href: '/services' },
-      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'About Me', href: '/#about' },
+      { label: 'Skills & Stack', href: '/#skills' },
+      { label: 'Contact', href: '/#contact' },
     ],
   },
 ]
