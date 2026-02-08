@@ -67,11 +67,7 @@ const NavbarItem = () => {
           })}
         </ul>
 
-        <ThemeToggle />
-
-        <Button asChild className='rounded-full'>
-          <Link href={NAV_CTA.href}>{NAV_CTA.label}</Link>
-        </Button>
+        
       </div>
 
       <div className='flex items-center gap-1 md:hidden'>
@@ -89,7 +85,7 @@ const NavbarItem = () => {
         </Button>
       </div>
 
-      <div id='mobile-navbar-menu'>
+      {/* <div id='mobile-navbar-menu'>
         <MobileMenu
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
@@ -98,7 +94,7 @@ const NavbarItem = () => {
           ctaHref={NAV_CTA.href}
           ctaLabel={NAV_CTA.label}
         />
-      </div>
+      </div> */}
     </>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 type Theme = 'light' | 'dark';
@@ -35,7 +36,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <Button size="icon-sm" variant="ghost" onClick={toggleTheme} aria-label="Toggle theme" title="Toggle theme">
+    <Button size="icon-sm" variant="ghost" onClick={toggleTheme} aria-label="Toggle theme" title="Toggle theme" className='cursor-pointer'>
       <Sun className="hidden size-4 dark:block" />
       <Moon className="size-4 dark:hidden" />
     </Button>
