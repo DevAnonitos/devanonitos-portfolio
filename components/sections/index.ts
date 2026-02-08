@@ -10,3 +10,4 @@ export { default as JournalSection } from './JournalSection';
 export { default as FAQSection } from './FAQSection';
 export { default as AwardSection } from './AwardSection';
 export { default as ClientSection } from './ClientSection';
+export { default as CTASection } from './CTASection';

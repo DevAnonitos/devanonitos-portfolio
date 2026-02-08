@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterItem from './FooterItem';
 
 const Footer = () => {
   return (

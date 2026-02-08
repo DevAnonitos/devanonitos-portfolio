@@ -1,21 +1,19 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import React from 'react'
+import Navbar from './Navbar/Navbar'
+import Footer from './Footer/Footer'
 
 interface AppLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className='relative flex min-h-screen flex-col'>
       <Navbar />
-      <main className="flex-grow">
-        {children}
-      </main>
+      <main className='flex-grow'>{children}</main>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default AppLayout;
+export default AppLayout
