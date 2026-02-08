@@ -13,19 +13,26 @@ import MobileMenu from './MobileMenu'
 const NavbarItem = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+  const [activeHash, setActiveHash] = useState('')
+
+  useEffect(() => {
+    const syncHash = () => setActiveHash(window.location.hash)
+
+    syncHash()
+    window.addEventListener('hashchange', syncHash)
+
+    return () => window.removeEventListener('hashchange', syncHash)
+  }, [])
 
   const activeHref = useMemo(() => {
-    if (pathname === '/') return '/'
+    if (pathname !== '/') return pathname
 
-    const exactMatch = NAV_LINKS.find((link) => link.href === pathname)
-    if (exactMatch) return exactMatch.href
+    if (activeHash) {
+      return `/${activeHash}`
+    }
 
-    const sectionMatch = NAV_LINKS.find(
-      (link) => link.href.startsWith('/#') && pathname.startsWith('/'),
-    )
-
-    return sectionMatch?.href ?? pathname
-  }, [pathname])
+    return '/'
+  }, [activeHash, pathname])
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
