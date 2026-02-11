@@ -1,11 +1,12 @@
 import React from 'react';
+import Container from '@/components/layout/Container'
 
 const ContactSection = () => {
   return (
     <section id="contact" className="contact-section">
-      <div className="container mx-auto">
+      <Container>
         <h2>Get In Touch</h2>
-      </div>
+      </Container>
     </section>
   );
 };

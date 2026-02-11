@@ -70,7 +70,7 @@ const NavbarItem = () => {
         
       </div>
 
-      <div className='flex items-center gap-1 md:hidden'>
+      {/* <div className='flex items-center gap-1 md:hidden'>
         <ThemeToggle />
         <Button
           variant='outline'
@@ -83,7 +83,7 @@ const NavbarItem = () => {
         >
           <Menu className='size-4' />
         </Button>
-      </div>
+      </div> */}
 
       {/* <div id='mobile-navbar-menu'>
         <MobileMenu

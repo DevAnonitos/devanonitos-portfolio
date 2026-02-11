@@ -14,7 +14,7 @@ const socialItems = [
 
 const Footer = () => {
   return (
-    <footer className='border-t border-border/70 bg-card/40'>
+    <footer className='border-t border-border/70 bg-card/40 bottom-0 z-50'>
       <div className='mx-auto grid w-full gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-16 lg:px-8'>
         <div className='space-y-5'>
           <Link href='/' className='inline-flex items-center gap-2 text-sm font-semibold tracking-tight'>

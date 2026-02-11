@@ -1,11 +1,12 @@
 import React from 'react';
+import Container from '@/components/layout/Container'
 
 const ServiceSection = () => {
   return (
-    <section id="services" className="service-section">
-      <div className="container mx-auto">
+    <section id="services" className="">
+      <Container>
         <h2>Services I Offer</h2>
-      </div>
+      </Container>
     </section>
   );
 };

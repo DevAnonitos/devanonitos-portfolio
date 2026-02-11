@@ -1,11 +1,12 @@
 import React from 'react';
+import Container from '@/components/layout/Container'
 
 const ProjectSection = () => {
   return (
-    <section id="projects" className="project-section">
-      <div className="container mx-auto">
+    <section id="projects" className="">
+      <Container>
         <h2>Featured Projects</h2>
-      </div>
+      </Container>
     </section>
   );
 };

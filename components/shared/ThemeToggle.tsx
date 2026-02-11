@@ -1,46 +1,48 @@
 'use client';
 
-import { useEffect } from 'react';
+import * as React from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
-type Theme = 'light' | 'dark';
-
-const STORAGE_KEY = 'theme';
-
-const getPreferredTheme = (): Theme => {
-  const storedTheme = window.localStorage.getItem(STORAGE_KEY);
-  if (storedTheme === 'light' || storedTheme === 'dark') {
-    return storedTheme;
-  }
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-};
-
-const applyTheme = (theme: Theme) => {
-  document.documentElement.classList.toggle('dark', theme === 'dark');
-};
-
 const ThemeToggle = () => {
-  useEffect(() => {
-    applyTheme(getPreferredTheme());
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    const nextTheme: Theme = isDark ? 'light' : 'dark';
+  if (!mounted) {
+    return (
+      <Button size="icon-sm" variant="ghost" disabled aria-label="Toggle theme">
+        <div className="size-4" />
+      </Button>
+    );
+  }
 
-    applyTheme(nextTheme);
-    window.localStorage.setItem(STORAGE_KEY, nextTheme);
-  };
+  const isDark = resolvedTheme === 'dark';
 
   return (
-    <Button size="icon-sm" variant="ghost" onClick={toggleTheme} aria-label="Toggle theme" title="Toggle theme" className='cursor-pointer'>
-      <Sun className="hidden size-4 dark:block" />
-      <Moon className="size-4 dark:hidden" />
+    <Button
+      variant="secondary"
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
+      aria-label="Toggle theme"
+      className="flex items-center gap-2 px-3 py-1.5 cursor-pointer h-9"
+    >
+      {isDark ? (
+        <>
+          <Sun className="size-4 transition-all" />
+          <span className="text-sm font-medium">Light Mode</span>
+        </>
+      ) : (
+        <>
+          <Moon className="size-4 transition-all" />
+          <span className="text-sm font-medium">Dark Mode</span>
+        </>
+      )}
     </Button>
-  )
-}
+  );
+};
 
-export default ThemeToggle
+export default ThemeToggle;

@@ -1,9 +1,10 @@
 import React from 'react'
+import { SkillSection } from '@/components/sections'
 
 const SkillsPage = () => {
   return (
     <div className='w-full h-screen'>
-      SkillsPage
+      <SkillSection />
     </div>
   )
 }

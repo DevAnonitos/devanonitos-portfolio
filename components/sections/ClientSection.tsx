@@ -1,14 +1,15 @@
 import React from 'react';
+import Container from '@/components/layout/Container'
 
 const ClientSection = () => {
   return (
-    <section id="clients" className="client-section">
-      <div className="container mx-auto">
+    <section id="clients" className="">
+      <Container>
         {/* Typically a horizontal slider or grid of grayscale logos */}
         <div className="logo-grid">
           {/* Company Logos */}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

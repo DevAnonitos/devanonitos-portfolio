@@ -1,32 +1,74 @@
+import { Variants } from 'motion/react';
+
 /**
- * Framer Motion animation variants
+ * Standard transition for most animations
  */
-export const FADE_IN = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
+export const STANDARD_TRANSITION = {
+  duration: 0.6,
+  ease: [0.22, 1, 0.36, 1] as const, // Custom cubic-bezier for smooth finish
 };
 
-export const STAGGER_CHILDREN = {
-  animate: {
+/**
+ * Fade in from bottom animation
+ */
+export const FADE_IN_UP: Variants = {
+  hidden: { 
+    opacity: 0, 
+    y: 40 
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: STANDARD_TRANSITION
+  }
+};
+
+/**
+ * Fade in with slight scale up
+ */
+export const FADE_IN_SCALE: Variants = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0.95 
+  },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: STANDARD_TRANSITION
+  }
+};
+
+/**
+ * Stagger container for children animations
+ */
+export const STAGGER_CONTAINER: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
     transition: {
       staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
 
-export const SLIDE_IN = (direction: 'left' | 'right' | 'up' | 'down') => {
-  return {
-    initial: {
-      x: direction === 'left' ? -100 : direction === 'right' ? 100 : 0,
-      y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
+/**
+ * Side reveal (useful for split layouts)
+ */
+export const REVEAL_LEFT: Variants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: STANDARD_TRANSITION
+  }
+};
+
+export const REVEAL_RIGHT: Variants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: STANDARD_TRANSITION
+  }
 };

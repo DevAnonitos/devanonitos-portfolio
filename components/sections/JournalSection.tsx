@@ -1,11 +1,12 @@
 import React from 'react';
+import Container from '@/components/layout/Container'
 
 const JournalSection = () => {
   return (
-    <section id="journal" className="journal-section">
-      <div className="container mx-auto">
+    <section id="journal" className="">
+      <Container>
         <h2>Latest Insights & Articles</h2>
-      </div>
+      </Container>
     </section>
   );
 };

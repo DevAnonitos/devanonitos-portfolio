@@ -13,7 +13,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       <main className='grow mt-16 mx-auto w-full'>
         {children}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

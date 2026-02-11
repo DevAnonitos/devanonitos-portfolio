@@ -11,7 +11,7 @@ const Navbar = () => {
       <nav aria-label='Main navigation' className='mx-auto flex h-16 w-full items-center justify-between px-4 sm:px-6 lg:px-8'>
         <BrandingLogo />
         <NavbarItem />
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center justify-between gap-4'>
           <ThemeToggle />
           <Button asChild className='rounded-full'>
             <Link href={NAV_CTA.href}>{NAV_CTA.label}</Link>

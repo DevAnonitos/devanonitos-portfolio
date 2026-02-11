@@ -1,11 +1,12 @@
 import React from 'react';
+import Container from '@/components/layout/Container'
 
 const AwardSection = () => {
   return (
     <section id="awards" className="award-section">
-      <div className="container mx-auto">
+      <Container>
         <h2>Awards & Certifications</h2>
-      </div>
+      </Container>
     </section>
   );
 };
