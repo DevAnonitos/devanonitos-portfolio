@@ -3,7 +3,7 @@ import { AboutSection } from "@/components/sections";
 
 const AboutPage = () => {
   return (
-    <div className="py-16">
+    <div className="w-full h-screen">
       <AboutSection />
     </div>
   );

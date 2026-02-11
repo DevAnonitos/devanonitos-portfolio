@@ -3,7 +3,7 @@ import { ProjectSection } from "@/components/sections";
 
 const ProjectsPage = () => {
   return (
-    <div className="py-16">
+    <div className="w-full h-screen">
       <ProjectSection />
     </div>
   );

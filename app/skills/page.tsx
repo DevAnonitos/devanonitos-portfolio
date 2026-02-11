@@ -2,7 +2,9 @@ import React from 'react'
 
 const SkillsPage = () => {
   return (
-    <div>SkillsPage</div>
+    <div className='w-full h-screen'>
+      SkillsPage
+    </div>
   )
 }
 
