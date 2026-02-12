@@ -8,3 +8,4 @@ export * from './experience';
 export * from './navigation';
 export * from './animations';
 export * from './faq';
+export * from './testimonials';
