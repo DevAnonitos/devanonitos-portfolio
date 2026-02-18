@@ -3,13 +3,17 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
+  "editor.tabCompletion": "on",
   "editor.colorDecorators": true,
   "editor.cursorBlinking": "smooth",
+  "editor.autoClosingDelete": "auto",
+  "editor.largeFileOptimizations": true,
   "editor.defaultColorDecorators": "auto",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.autoClosingQuotes": "languageDefined",
   "editor.autoClosingBrackets": "languageDefined",
   "editor.autoClosingComments": "languageDefined",
+  "editor.bracketPairColorization.enabled": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.colorDecoratorsActivatedOn": "clickAndHover",
   // explore settings
@@ -34,7 +38,7 @@
   "javascript.inlayHints.parameterTypes.enabled": false,
   // typescript settings
   "typescript.preferences.organizeImports": {
-
+    
   },
   "typescript.locale": "auto",
   "typescript.suggest.paths": true,
@@ -65,6 +69,8 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // other settings
+  "emmet.optimizeStylesheetParsing": true,
   // terminal settings
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.enableFileLinks": "on",
