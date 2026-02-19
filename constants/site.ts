@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   title: "DevAnonitos Portfolio",
   author: "DevAnonitos",
   description: "A professional portfolio showcasing expertise in modern web development, UI/UX design, and innovative digital solutions.",
-  url: "",
+  url: "http://localhost:3000",
   ogImage: "/og-image.jpg",
   keywords: [
     "Software Engineer",

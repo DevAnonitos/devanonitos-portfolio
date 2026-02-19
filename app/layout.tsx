@@ -22,6 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       absolute: SITE_CONFIG.title, 
       template: `%s | ${SITE_CONFIG.title}`,
     },
+    metadataBase: new URL(SITE_CONFIG.url),
     authors: { name: SITE_CONFIG.author },
     description: SITE_CONFIG.description,
     keywords: SITE_CONFIG.keywords,
