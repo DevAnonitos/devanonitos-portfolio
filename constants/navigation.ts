@@ -18,19 +18,29 @@ export const NAV_CTA = {
 
 export const FOOTER_LINKS = [
   {
-    title: 'Projects',
+    title: 'Services',
     links: [
-      { label: 'Featured Work', href: '/#projects' },
-      { label: 'All Projects', href: '/projects' },
-      { label: 'Work Process', href: '/#experience' },
+      { label: 'Web Development', href: '/#services' },
+      { label: 'UI/UX Design', href: '/#services' },
+      { label: 'Brand Identity', href: '/#services' },
+      { label: 'SEO & Marketing', href: '/#services' },
     ],
   },
   {
-    title: 'Company',
+    title: 'Resources',
     links: [
-      { label: 'About Me', href: '/#about' },
-      { label: 'Skills & Stack', href: '/#skills' },
-      { label: 'Contact', href: '/#contact' },
+      { label: 'Journal', href: '/journal' },
+      { label: 'Projects', href: '/projects' },
+      { label: 'Testimonials', href: '/#testimonials' },
+      { label: 'FAQ', href: '/#faq' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
+      { label: 'Cookie Policy', href: '/cookies' },
     ],
   },
 ]

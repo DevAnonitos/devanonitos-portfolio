@@ -1,0 +1,19 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "journal": "Journal",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm DevAnonitos",
+    "subtitle": "Software Engineer & Content Creator",
+    "description": "Building modern, high-performance web applications with a focus on user experience and clean code."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

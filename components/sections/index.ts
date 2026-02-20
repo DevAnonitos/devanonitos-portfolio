@@ -11,3 +11,6 @@ export { default as FAQSection } from './FAQSection';
 export { default as AwardSection } from './AwardSection';
 export { default as ClientSection } from './ClientSection';
 export { default as CTASection } from './CTASection';
+export { default as PrivacySection } from './PrivacySection';
+export { default as TermsSection } from './TermsSection';
+export { default as CookiesSection } from './CookiesSection';

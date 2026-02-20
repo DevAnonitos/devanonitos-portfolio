@@ -15,7 +15,7 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection"), {
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
+    <main className="flex flex-col w-full min-h-screen">
       <HeroSection />
 
       <Suspense fallback={<SectionLoading />}>
@@ -29,7 +29,7 @@ export default function Home() {
       <Suspense fallback={<SectionLoading />}>
         <CTASection />
       </Suspense>
-    </div>
+    </main>
   );
 }
 

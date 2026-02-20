@@ -15,14 +15,14 @@ const socialItems = [
 const Footer = () => {
   return (
     <footer className='border-t border-border/70 bg-card/40 backdrop-blur-md w-full'>
-      <div className='mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-16 lg:px-8'>
-        <div className='space-y-5'>
+      <div className='mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:grid-cols-5 lg:gap-12 lg:px-8 justify-between'>
+        <div className='space-y-5 lg:col-span-1'>
           <Link href='/' className='inline-flex items-center gap-2 text-sm font-semibold tracking-tight'>
             <span className='h-2 w-2 rounded-full bg-primary' />
             {SITE_CONFIG.author}
           </Link>
 
-          <p className='max-w-md text-sm leading-relaxed text-muted-foreground'>
+          <p className='max-w-xs text-sm leading-relaxed text-muted-foreground'>
             Building high-quality web experiences with a balance between clean engineering,
             modern UI, and conversion-focused UX.
           </p>
@@ -46,11 +46,9 @@ const Footer = () => {
 
         <FooterItem title='Navigation' links={NAV_LINKS.filter((link) => link.href !== '/')} />
 
-        <div className='grid gap-6 sm:grid-cols-2 lg:grid-cols-1'>
-          {FOOTER_LINKS.map((group) => (
-            <FooterItem key={group.title} title={group.title} links={group.links} />
-          ))}
-        </div>
+        {FOOTER_LINKS.map((group) => (
+          <FooterItem key={group.title} title={group.title} links={group.links} />
+        ))}
       </div>
 
       <div className='border-t border-border/60'>

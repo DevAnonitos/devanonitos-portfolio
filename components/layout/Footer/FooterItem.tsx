@@ -19,7 +19,7 @@ const FooterItem = ({ title, links, className, onNavigate }: FooterItemProps) =>
       <h3 className='text-sm font-semibold tracking-wide text-foreground'>{title}</h3>
       <ul className='space-y-2'>
         {links.map((link) => (
-          <li key={`${title}-${link.href}`}>
+          <li key={link.label}>
             <Link
               href={link.href}
               onClick={onNavigate}
