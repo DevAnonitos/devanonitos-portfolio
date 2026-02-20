@@ -3,7 +3,7 @@ import ExperienceSection from '@/components/sections/ExperienceSection'
 
 const ExperiencePage = () => {
     return (
-      <div className='w-full h-screen'>
+      <div className='flex flex-col w-full'>
         <ExperienceSection />
       </div>
     )

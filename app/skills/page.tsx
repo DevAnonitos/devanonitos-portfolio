@@ -3,7 +3,7 @@ import { SkillSection } from '@/components/sections'
 
 const SkillsPage = () => {
   return (
-    <div className='w-full h-screen'>
+    <div className='flex flex-col w-full'>
       <SkillSection />
     </div>
   )
