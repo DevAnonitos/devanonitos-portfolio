@@ -22,16 +22,41 @@ export async function generateMetadata(): Promise<Metadata> {
       absolute: SITE_CONFIG.title, 
       template: `%s | ${SITE_CONFIG.title}`,
     },
+    category: "Technology",
+    applicationName: SITE_CONFIG.title,
     metadataBase: new URL(SITE_CONFIG.url),
+    creator: SITE_CONFIG.author,
+    publisher: SITE_CONFIG.author,
     authors: { name: SITE_CONFIG.author },
     description: SITE_CONFIG.description,
     keywords: SITE_CONFIG.keywords,
+    archives: [
+      "https://nextjs.org/16",
+      "https://react.dev/",
+      "https://tailwindcss.com/"
+    ],
+    manifest: "/manifest.webmanifest",
     icons: {
       icon: "/favicon.ico",
+      shortcut: "/",
+      apple: "/apple-touch-icon.png",
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/apple-touch-icon-precomposed.png',
+      }
     },
     robots: {
       index: true,
       follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
     alternates: {
       canonical: SITE_CONFIG.url,
