@@ -40,6 +40,9 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  generateBuildId: async () => {
+    return process.env.GIT_HASH || null
+  },
 }
 
 export default nextConfig

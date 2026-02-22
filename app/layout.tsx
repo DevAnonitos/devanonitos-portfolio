@@ -1,9 +1,10 @@
-import "../styles/globals.css";
-import type { Metadata } from "next";
-import { SITE_CONFIG } from "@/constants/site";
 import { AppLayout } from "@/components/layout";
 import { ThemeProvider } from "@/components/providers";
+import { BackToTop } from "@/components/shared";
+import { SITE_CONFIG } from "@/constants/site";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "../styles/globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +18,9 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: { 
-      default: SITE_CONFIG.title, 
-      absolute: SITE_CONFIG.title, 
+    title: {
+      default: SITE_CONFIG.title,
+      absolute: SITE_CONFIG.title,
       template: `%s | ${SITE_CONFIG.title}`,
     },
     category: "Technology",
@@ -109,6 +110,7 @@ export default function RootLayout({
           <AppLayout>
             {children}
           </AppLayout>
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
