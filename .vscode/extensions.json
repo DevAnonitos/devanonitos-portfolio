@@ -1,3 +1,27 @@
 {
-  
+  "recommendations": [
+    // Core - Language & Syntax
+    "esbenp.prettier-vscode", // Code formatter
+    "dbaeumer.vscode-eslint", // Linter for JS/TS
+    "ms-vscode.vscode-typescript-next", // TS support
+    "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense
+
+    // UI/UX Enhancements
+    "pnm.lucide-icons", // Lucide React icons support
+    "christian-kohler.path-intellisense", // Auto-complete file paths
+    "formulahendry.auto-rename-tag", // Renames matching HTML tag
+    "dsznajder.es7-react-js-snippets", // React/Redux snippets
+
+    // Git & Productivity
+    "eamodio.gitlens", // Powerhouse for Git history/blame
+    "donjayamanne.githistory", // Visual Git history
+    "streetsidesoftware.code-spell-checker", // Catch typos in code
+
+    // Aesthetics
+    "be5invis.vscode-icontheme-nomo-dark", // Clean icon theme (optional, but good)
+    "vivaxy.vscode-conventional-commits", // Helper for GIT messages
+
+    // Performance/Debug
+    "ms-vscode.js-debug" // Integrated JS debugger
+  ]
 }

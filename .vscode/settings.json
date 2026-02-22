@@ -1,85 +1,106 @@
 {
-  // editor settings
+  // Editor - Core
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
+  "editor.indentSize": "tabSize",
   "editor.insertSpaces": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": true,
   "editor.tabCompletion": "on",
-  "editor.colorDecorators": true,
+  "editor.inlineSuggest.enabled": true,
+
+  // Editor - Aesthetics & UX
   "editor.cursorBlinking": "smooth",
-  "editor.autoClosingDelete": "auto",
-  "editor.largeFileOptimizations": true,
-  "editor.defaultColorDecorators": "auto",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.autoClosingQuotes": "languageDefined",
-  "editor.autoClosingBrackets": "languageDefined",
-  "editor.autoClosingComments": "languageDefined",
   "editor.bracketPairColorization.enabled": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.guides.bracketPairs": "active",
+  "editor.colorDecorators": true,
   "editor.colorDecoratorsActivatedOn": "clickAndHover",
-  // explore settings
+  "editor.smoothScrolling": true,
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.renderLineHighlight": "all",
+  "editor.fontLigatures": true,
+  "editor.lineNumbers": "on",
+
+  // Editor - Code Actions & Formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Files
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true
+  },
+
+  // Explorer
   "explorer.autoReveal": true,
-  "explorer.compactFolders": true,
-  "explorer.openEditors.visible": 9,
+  "explorer.compactFolders": false,
   "explorer.decorations.badges": true,
   "explorer.decorations.colors": true,
-  "explorer.fileNesting.enabled": false,
-  //  language settings
-  // javascript settings
-  "javascript.preferences.organizeImports": {
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "next.config.js": "next-env.d.ts, next.config.mjs",
+    "tailwind.config.ts": "tailwind.config.js, postcss.config.js, postcss.config.mjs",
+    "*.ts": "${capture}.test.ts, ${capture}.spec.ts, ${capture}.d.ts",
+    "*.tsx": "${capture}.test.tsx, ${capture}.spec.tsx",
+    ".env": ".env.local, .env.development, .env.production, .env.example"
+  },
 
-  },
-  "javascript.format.enable": true,
-  "javascript.autoClosingTags": true,
-  "javascript.suggest.enabled": true,
+  // Workbench
+  "workbench.list.smoothScrolling": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+
+  // Languages - JavaScript/TypeScript
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.autoImports": true,
-  "javascript.suggest.completeFunctionCalls": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.parameterTypes.enabled": false,
-  // typescript settings
-  "typescript.preferences.organizeImports": {
-    
-  },
-  "typescript.locale": "auto",
-  "typescript.suggest.paths": true,
-  "typescript.format.enable": true,
-  "typescript.suggest.enabled": true,
-  "typescript.autoClosingTags": true,
   "typescript.suggest.autoImports": true,
-  "typescript.check.npmIsInstalled": true,
-  "typescript.suggest.completeJSDocs": true,
-  "typescript.tsserver.watchOptions": "vscode",
+  "javascript.suggest.completeFunctionCalls": true,
   "typescript.suggest.completeFunctionCalls": true,
+  "typescript.tsserver.maxTsServerMemory": 8192,
   "typescript.inlayHints.parameterNames.enabled": "all",
-  // markdown
-  "markdown.math.enabled": true,
-  "markdown.validate.enabled": false,
-  "markdown.suggest.paths.enabled": true,
-  "markdown.links.openLocation": "currentGroup",
-  "markdown.preview.doubleClickToSwitchToEditor": true,
-  // json
-  "json.format.enable": true,
-  "json.format.keepLines": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+
+  // Languages - Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // other settings
-  "emmet.optimizeStylesheetParsing": true,
-  // terminal settings
-  "terminal.integrated.cursorStyle": "block",
-  "terminal.integrated.enableFileLinks": "on",
-  "terminal.integrated.cursorBlinking": false,
+  "emmet.triggerExpansionOnTab": true,
+
+  // Terminal
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.smoothScrolling": true,
-  // git settings
-  "git.smartCommitChanges": "all",
-  "git.decorations.enabled": true, 
-  "git.autoRepositoryDetection": true,   
-  // github settings
-  "github.showAvatar": true,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.tabs.enabled": true,
+
+  // Git
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+
+  // Miscellaneous
+  "security.workspace.trust.untrustedFiles": "open",
+  "search.useIgnoreFiles": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.next": true
+  }
 }

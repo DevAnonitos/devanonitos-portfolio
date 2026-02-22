@@ -4,8 +4,8 @@
   "fluid": true,
   "cleanUrls": true,
   "framework": "nextjs",
-  // "devCommand": "next dev",
-  // "buildCommand": "next build",
+  "devCommand": "next dev",
+  "buildCommand": "next build",
   "installCommand": "npm install",
   "git": {
     "autoJobCancelation": false,
