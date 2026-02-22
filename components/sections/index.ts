@@ -14,3 +14,5 @@ export { default as CTASection } from './CTASection';
 export { default as PrivacySection } from './PrivacySection';
 export { default as TermsSection } from './TermsSection';
 export { default as CookiesSection } from './CookiesSection';
+export { default as NotFoundSection } from './NotFoundSection';
+export { default as ErrorSection } from './ErrorSection';
