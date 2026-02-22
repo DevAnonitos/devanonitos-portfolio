@@ -1,6 +1,6 @@
 import { AppLayout } from "@/components/layout";
 import { ThemeProvider } from "@/components/providers";
-import { BackToTop, GridBackground } from "@/components/shared";
+import { BackToTop, GridBackground, WebVitals } from "@/components/shared";
 import { SITE_CONFIG } from "@/constants/site";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";

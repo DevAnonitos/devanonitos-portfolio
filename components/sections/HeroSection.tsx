@@ -1,36 +1,35 @@
 "use client"
 
-import React from 'react';
-import { Container } from '../layout';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { DEVELOPER_INFO, SOCIAL_LINKS } from '@/constants';
-import { ArrowUpRight, Github, Linkedin, Twitter, Mail, Download } from 'lucide-react';
-import Link from 'next/link';
-import { motion } from 'motion/react';
+import { Button } from '@/components/ui/button';
+import { DEVELOPER_INFO } from '@/constants';
 import { FADE_IN_UP, STAGGER_CONTAINER } from '@/constants/animations';
+import { ArrowUpRight, Download } from 'lucide-react';
+import { motion } from 'motion/react';
+import { Container } from '../layout';
+import { SocialLinks } from '../shared';
 
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-[90vh] w-full pt-32 pb-20 overflow-hidden flex items-center">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]" 
+          className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]"
         />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-          className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-blue-500/20 rounded-full blur-[100px]" 
+          className="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-blue-500/20 rounded-full blur-[100px]"
         />
       </div>
 
       <Container className="relative">
-        <motion.div 
+        <motion.div
           variants={STAGGER_CONTAINER}
           initial="hidden"
           animate="visible"
@@ -52,7 +51,7 @@ const HeroSection = () => {
               Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Digital Experiences</span>
             </motion.h1>
             <motion.p variants={FADE_IN_UP} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I&apos;m <span className="text-foreground font-semibold">{DEVELOPER_INFO.name}</span>, a {DEVELOPER_INFO.role} based in {DEVELOPER_INFO.location}. 
+              I&apos;m <span className="text-foreground font-semibold">{DEVELOPER_INFO.name}</span>, a {DEVELOPER_INFO.role} based in {DEVELOPER_INFO.location}.
               {DEVELOPER_INFO.bio}
             </motion.p>
           </div>
@@ -69,22 +68,10 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Social Links & Trust Indicators */}
-          <motion.div variants={FADE_IN_UP} className="pt-8 border-t border-border/50 max-w-xs mx-auto">
-            <div className="flex items-center justify-center gap-6">
-              <Link href={SOCIAL_LINKS.github} target="_blank" className="text-muted-foreground hover:text-primary transition-colors p-2">
-                <Github className="size-6" />
-              </Link>
-              <Link href={SOCIAL_LINKS.linkedin} target="_blank" className="text-muted-foreground hover:text-primary transition-colors p-2">
-                <Linkedin className="size-6" />
-              </Link>
-              <Link href={SOCIAL_LINKS.twitter} target="_blank" className="text-muted-foreground hover:text-primary transition-colors p-2">
-                <Twitter className="size-6" />
-              </Link>
-              <Link href={`mailto:${SOCIAL_LINKS.email}`} className="text-muted-foreground hover:text-primary transition-colors p-2">
-                <Mail className="size-6" />
-              </Link>
-            </div>
+          {/* Social Links Component Integration */}
+          <motion.div variants={FADE_IN_UP} className="pt-8 border-t border-border/50 max-w-sm mx-auto flex flex-col items-center gap-4">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/50">Connect with me</p>
+            <SocialLinks variant="ghost" iconSize={24} />
           </motion.div>
         </motion.div>
       </Container>

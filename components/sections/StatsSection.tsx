@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
 import { useScrollReveal } from "@/hooks"
 import { cn } from "@/lib/utils"
+import { Stat } from "@/types"
 import {
     Code2,
     Cpu,
@@ -121,8 +122,6 @@ const StatsSection = () => {
             {STATS.map((stat, index) => (
               <motion.div
                 key={index}
-                variants={FADE_IN_UP}
-                whileHover={{ y: -10 }}
                 className="group relative p-8 rounded-[3rem] border border-border/50 bg-card/20 backdrop-blur-xl hover:border-primary/30 hover:bg-card/40 transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-primary/5"
               >
                 <div className="space-y-6 text-center lg:text-left">

@@ -1,16 +1,10 @@
+import { SocialLinks } from '@/components/shared'
+import { FOOTER_LINKS, NAV_LINKS, SITE_CONFIG } from '@/constants'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
-import { ArrowUpRight, Github, Linkedin, Mail, Twitter } from 'lucide-react'
-import { FOOTER_LINKS, NAV_LINKS, SITE_CONFIG, SOCIAL_LINKS } from '@/constants'
 import FooterItem from './FooterItem'
 
 const currentYear = new Date().getFullYear()
-
-const socialItems = [
-  { label: 'GitHub', href: SOCIAL_LINKS.github, icon: Github },
-  { label: 'LinkedIn', href: SOCIAL_LINKS.linkedin, icon: Linkedin },
-  { label: 'Twitter', href: SOCIAL_LINKS.twitter, icon: Twitter },
-  { label: 'Email', href: `mailto:${SOCIAL_LINKS.email}`, icon: Mail },
-]
 
 const Footer = () => {
   return (
@@ -27,21 +21,7 @@ const Footer = () => {
             modern UI, and conversion-focused UX.
           </p>
 
-          <div className='flex flex-wrap items-center gap-2'>
-            {socialItems.map(({ label, href, icon: Icon }) => (
-              <Link
-                key={label}
-                href={href}
-                target={href.startsWith('mailto:') ? undefined : '_blank'}
-                rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
-                aria-label={label}
-                className='inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1.5 text-xs text-muted-foreground transition hover:border-primary/40 hover:text-foreground'
-              >
-                <Icon className='size-3.5' />
-                {label}
-              </Link>
-            ))}
-          </div>
+          <SocialLinks variant="ghost" iconSize={18} className="gap-2" />
         </div>
 
         <FooterItem title='Navigation' links={NAV_LINKS.filter((link) => link.href !== '/')} />

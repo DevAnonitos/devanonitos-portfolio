@@ -47,7 +47,7 @@ const BackToTop = () => {
         >
           <button
             onClick={scrollToTop}
-            className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-background/80 shadow-2xl backdrop-blur-md transition-colors hover:bg-background"
+            className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-background/80 shadow-2xl backdrop-blur-md transition-colors hover:bg-background cursor-pointer"
             aria-label="Back to top"
           >
             {/* SVG Progress Circle */}
