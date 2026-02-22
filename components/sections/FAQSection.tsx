@@ -1,27 +1,26 @@
 "use client"
 
-import React from 'react';
-import { Container } from '../layout';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from '@/components/ui/badge';
+import { FAQS } from '@/constants';
+import { FADE_IN_UP, STAGGER_CONTAINER } from '@/constants/animations';
+import { useScrollReveal } from '@/hooks';
 import { MessageCircleQuestion } from 'lucide-react';
 import { motion } from 'motion/react';
-import { FAQS } from '@/constants';
-import { useScrollReveal } from '@/hooks';
-import { FADE_IN_UP, STAGGER_CONTAINER } from '@/constants/animations';
+import { Container } from '../layout';
 
 const FAQSection = () => {
   const { ref, controls } = useScrollReveal();
 
   return (
-    <motion.section 
+    <motion.section
       ref={ref}
-      id="faq" 
+      id="faq"
       initial="hidden"
       animate={controls}
       variants={FADE_IN_UP}
@@ -53,9 +52,9 @@ const FAQSection = () => {
           {/* Accordion Section */}
           <motion.div variants={FADE_IN_UP} className="w-full md:w-2/3">
             <Accordion type="single" collapsible className="w-full space-y-4">
-              {FAQS.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+              {FAQS.map((faq: FAQ, index) => (
+                <AccordionItem
+                  key={index}
                   value={`item-${index}`}
                   className="bg-background border border-border/50 rounded-xl px-6 transition-all hover:border-primary/30 data-[state=open]:border-primary/50 data-[state=open]:shadow-sm"
                 >

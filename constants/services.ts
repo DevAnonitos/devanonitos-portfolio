@@ -1,13 +1,13 @@
-import { 
-  Code2, 
-  Terminal, 
-  Cpu, 
-  Palette, 
-  LineChart, 
-  ShieldCheck 
+import {
+    Code2,
+    Cpu,
+    LineChart,
+    Palette
 } from "lucide-react"
 
-export const SERVICES = [
+import { Service } from "@/types"
+
+export const SERVICES: Service[] = [
   {
     id: "ser-1",
     title: "Fullstack Development",

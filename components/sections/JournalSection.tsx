@@ -1,13 +1,12 @@
 "use client"
 
-import React from "react"
 import Container from "@/components/layout/Container"
-import { motion } from "motion/react"
 import { Badge } from "@/components/ui/badge"
+import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
 import { JOURNAL_POSTS } from "@/constants/journal"
 import { useScrollReveal } from "@/hooks"
-import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
-import { Calendar, Clock, ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Calendar, Clock } from "lucide-react"
+import { motion } from "motion/react"
 import Link from "next/link"
 
 const JournalSection = () => {
@@ -17,7 +16,7 @@ const JournalSection = () => {
     <section id="journal" className="py-24 relative overflow-hidden bg-background">
       {/* Decorative Ornaments */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2" />
-      
+
       <Container>
         <motion.div
           ref={ref}
@@ -38,11 +37,11 @@ const JournalSection = () => {
                 The Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Journal</span>
               </motion.h2>
               <motion.p variants={FADE_IN_UP} className="text-muted-foreground text-lg leading-relaxed">
-                Exploring the boundaries of web engineering, data science, and modern architecture 
+                Exploring the boundaries of web engineering, data science, and modern architecture
                 through deep dives and case studies.
               </motion.p>
             </div>
-            
+
             <motion.div variants={FADE_IN_UP}>
                 <Link href="/journal" className="group flex items-center gap-3 py-4 px-8 rounded-full border border-border/50 bg-card/20 backdrop-blur-sm hover:border-primary/40 transition-all shadow-sm">
                     <span className="text-sm font-bold tracking-widest uppercase">View All Posts</span>
@@ -53,7 +52,7 @@ const JournalSection = () => {
 
           {/* Posts Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {JOURNAL_POSTS.map((post) => (
+            {JOURNAL_POSTS.map((post: JournalPost) => (
               <motion.div
                 key={post.id}
                 variants={FADE_IN_UP}
@@ -61,9 +60,9 @@ const JournalSection = () => {
               >
                 {/* Post Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
-                   <img 
-                    src={post.image} 
-                    alt={post.title} 
+                   <img
+                    src={post.image}
+                    alt={post.title}
                     className="w-full h-full object-cover grayscale opacity-80 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110 group-hover:opacity-100"
                    />
                    <div className="absolute top-6 left-6">
@@ -96,7 +95,7 @@ const JournalSection = () => {
                    </p>
 
                    <div className="pt-4 mt-auto">
-                      <Link 
+                      <Link
                         href={`/journal/${post.slug}`}
                         className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:gap-4 transition-all"
                       >

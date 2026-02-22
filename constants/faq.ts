@@ -1,4 +1,6 @@
-export const FAQS = [
+import { FAQ } from "@/types";
+
+export const FAQS: FAQ[] = [
   {
     question: "What industries do you specialize in?",
     answer: "I specialize in FinTech, E-commerce, and SaaS platforms. My expertise lies in building high-performance web applications that require complex data handling and seamless user experiences."

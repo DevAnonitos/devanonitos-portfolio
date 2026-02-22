@@ -1,7 +1,9 @@
+import { Project, Research } from "@/types";
+
 /**
  * Portfolio projects data
  */
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "EcoSmart E-Commerce",
@@ -77,7 +79,7 @@ export const PROJECTS = [
   }
 ];
 
-export const RESEARCHS = [
+export const RESEARCHS: Research[] = [
   {
     id: "r1",
     title: "The Future of Edge Computing",

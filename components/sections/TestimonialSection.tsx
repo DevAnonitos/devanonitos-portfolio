@@ -1,46 +1,46 @@
 "use client"
 
-import React from 'react';
 import Container from '@/components/layout/Container';
-import { motion } from 'motion/react';
 import { Badge } from '@/components/ui/badge';
 import { TESTIMONIALS } from '@/constants';
-import { useScrollReveal } from '@/hooks';
 import { FADE_IN_UP, STAGGER_CONTAINER } from '@/constants/animations';
-import { Quote, Star } from 'lucide-react';
+import { useScrollReveal } from '@/hooks';
 import { cn } from '@/lib/utils';
+import { Testimonial } from '@/types';
+import { Quote, Star } from 'lucide-react';
+import { motion } from 'motion/react';
 
-const TestimonialCard = ({ testimonial, className }: { testimonial: typeof TESTIMONIALS[0], className?: string }) => (
+const TestimonialCard = ({ testimonial, className }: { testimonial: Testimonial, className?: string }) => (
   <div className={cn(
     "flex-shrink-0 w-[350px] md:w-[450px] p-8 rounded-[2.5rem] bg-card/30 border border-border/50 backdrop-blur-xl transition-all duration-500 hover:border-primary/40 hover:bg-card/50 group relative overflow-hidden",
     className
   )}>
     {/* Background Quote Icon Decoration */}
     <Quote className="absolute -right-4 -top-4 size-32 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity rotate-12" />
-    
+
     <div className="relative space-y-6">
       <div className="flex items-center gap-1 text-amber-500">
         {[...Array(testimonial.rating)].map((_, i) => (
           <Star key={i} className="size-4 fill-current" />
         ))}
       </div>
-      
+
       <p className="text-muted-foreground leading-relaxed italic text-lg line-clamp-4 group-hover:text-foreground transition-colors">
         &quot;{testimonial.content}&quot;
       </p>
-      
+
       <div className="flex items-center gap-4 pt-4 border-t border-border/40">
         <div className="relative">
           <div className="size-12 rounded-2xl overflow-hidden border-2 border-primary/20 bg-primary/10">
-            <img 
-              src={testimonial.avatar} 
-              alt={testimonial.name} 
+            <img
+              src={testimonial.avatar}
+              alt={testimonial.name}
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
             />
           </div>
           <div className="absolute -bottom-1 -right-1 size-4 bg-emerald-500 rounded-full border-2 border-background" />
         </div>
-        
+
         <div>
           <h4 className="font-bold tracking-tight text-foreground">{testimonial.name}</h4>
           <p className="text-xs font-medium text-muted-foreground/80 uppercase tracking-widest">{testimonial.role}</p>
@@ -61,7 +61,7 @@ const TestimonialSection = () => {
     <section id="testimonials" className="py-24 relative overflow-hidden bg-background">
       {/* Decorative Ornaments */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10" />
-      
+
       <Container>
         <motion.div
           ref={ref}
@@ -81,7 +81,7 @@ const TestimonialSection = () => {
               Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Visionaries</span>
             </motion.h2>
             <motion.p variants={FADE_IN_UP} className="text-muted-foreground text-lg leading-relaxed mx-auto max-w-2xl">
-              Don&apos;t just take my word for it. Here&apos;s what industry leaders and colleagues 
+              Don&apos;t just take my word for it. Here&apos;s what industry leaders and colleagues
               have to say about our collaborations.
             </motion.p>
           </div>
@@ -94,12 +94,12 @@ const TestimonialSection = () => {
 
             {/* Row 1 - Direct */}
             <div className="flex overflow-hidden">
-              <motion.div 
+              <motion.div
                 animate={{ x: [0, -1350] }}
-                transition={{ 
-                  duration: 40, 
-                  repeat: Infinity, 
-                  ease: "linear" 
+                transition={{
+                  duration: 40,
+                  repeat: Infinity,
+                  ease: "linear"
                 }}
                 className="flex gap-8 pr-8"
               >
@@ -111,12 +111,12 @@ const TestimonialSection = () => {
 
             {/* Row 2 - Reverse */}
             <div className="flex overflow-hidden">
-              <motion.div 
+              <motion.div
                 animate={{ x: [-1350, 0] }}
-                transition={{ 
-                  duration: 45, 
-                  repeat: Infinity, 
-                  ease: "linear" 
+                transition={{
+                  duration: 45,
+                  repeat: Infinity,
+                  ease: "linear"
                 }}
                 className="flex gap-8 pr-8"
               >
@@ -128,7 +128,7 @@ const TestimonialSection = () => {
           </div>
 
           {/* Bottom Trust Icons */}
-          <motion.div 
+          <motion.div
             variants={FADE_IN_UP}
             className="flex flex-wrap items-center justify-center gap-12 opacity-30 grayscale hover:opacity-60 transition-opacity"
           >

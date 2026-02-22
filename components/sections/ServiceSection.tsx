@@ -1,14 +1,13 @@
 "use client"
 
-import React from "react"
 import Container from "@/components/layout/Container"
-import { motion } from "motion/react"
 import { Badge } from "@/components/ui/badge"
+import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
 import { SERVICES } from "@/constants/services"
 import { useScrollReveal } from "@/hooks"
-import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
-import { CheckCircle2, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { motion } from "motion/react"
 
 const ServiceSection = () => {
   const { ref, controls } = useScrollReveal({ amount: 0.1 })
@@ -17,7 +16,7 @@ const ServiceSection = () => {
     <section id="services" className="py-24 relative overflow-hidden bg-background">
       {/* Decorative Ornaments */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10 -translate-y-1/2" />
-      
+
       <Container>
         <motion.div
           ref={ref}
@@ -37,14 +36,14 @@ const ServiceSection = () => {
               Values I bring <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">to the table</span>
             </motion.h2>
             <motion.p variants={FADE_IN_UP} className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-              Tailored digital solutions blending technical expertise with creative problem-solving 
+              Tailored digital solutions blending technical expertise with creative problem-solving
               to help you build, scale, and innovate.
             </motion.p>
           </div>
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 gap-8">
-            {SERVICES.map((service, index) => (
+            {SERVICES.map((service: Service, index) => (
               <motion.div
                 key={service.id}
                 variants={FADE_IN_UP}
@@ -72,8 +71,8 @@ const ServiceSection = () => {
                   {/* Feature Tags/List */}
                   <div className="flex flex-wrap gap-3">
                     {service.features.map((feature, fIdx) => (
-                      <div 
-                        key={fIdx} 
+                      <div
+                        key={fIdx}
                         className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 border border-border/40 text-[10px] md:text-xs font-bold tracking-wider uppercase text-foreground/80"
                       >
                         <CheckCircle2 className={cn("size-3", service.color)} />

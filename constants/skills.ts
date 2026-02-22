@@ -1,8 +1,10 @@
+import { SkillCategory } from "@/types";
+
 /**
  * Technical skills categorized by domain
  * Reflecting Fullstack Engineering and Data Science expertise
  */
-export const SKILLS = [
+export const SKILLS: SkillCategory[] = [
   {
     category: "Frontend Development",
     icon: "layers",

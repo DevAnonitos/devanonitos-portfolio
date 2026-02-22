@@ -1,35 +1,36 @@
 "use client"
 
-import React, { useState } from 'react';
 import Container from '@/components/layout/Container';
-import { motion } from 'motion/react';
 import { Badge } from '@/components/ui/badge';
 import { SKILLS } from '@/constants';
-import { useScrollReveal } from '@/hooks';
 import { FADE_IN_UP, STAGGER_CONTAINER } from '@/constants/animations';
-import { 
-  MonitorSmartphone, 
-  Server, 
-  Brain, 
-  Terminal,
-  Cpu,
-  Code2,
+import { useScrollReveal } from '@/hooks';
+import { cn } from '@/lib/utils';
+import { CategoryConfig } from '@/types';
+import {
+  ArrowRight,
   Atom,
   Binary,
+  Brain,
   Cloud,
+  Code2,
+  Cpu,
   DatabaseZap,
-  Sparkles,
-  Layers,
-  Palette,
-  Layout,
   GitBranch,
-  Workflow,
-  Users2,
-  Trophy,
+  Layers,
+  Layout,
+  MonitorSmartphone,
+  Palette,
+  Server,
+  Sparkles,
   Target,
-  ArrowRight
+  Terminal,
+  Trophy,
+  Users2,
+  Workflow
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
+import React, { useState } from 'react';
 
 const ICON_MAP: Record<string, React.ElementType> = {
   react: Atom,
@@ -54,26 +55,26 @@ const ICON_MAP: Record<string, React.ElementType> = {
   layers: Layers,
 };
 
-const CATEGORY_CONFIG: Record<string, { icon: React.ElementType, color: string, glow: string }> = {
-  "Frontend Development": { 
-    icon: MonitorSmartphone, 
-    color: "text-blue-500", 
-    glow: "bg-blue-500/10" 
+const CATEGORY_CONFIG: Record<string, CategoryConfig> = {
+  "Frontend Development": {
+    icon: MonitorSmartphone,
+    color: "text-blue-500",
+    glow: "bg-blue-500/10"
   },
-  "Backend & Infrastructure": { 
-    icon: Server, 
-    color: "text-violet-500", 
-    glow: "bg-violet-500/10" 
+  "Backend & Infrastructure": {
+    icon: Server,
+    color: "text-violet-500",
+    glow: "bg-violet-500/10"
   },
-  "Data Science & AI": { 
-    icon: Brain, 
-    color: "text-emerald-500", 
-    glow: "bg-emerald-500/10" 
+  "Data Science & AI": {
+    icon: Brain,
+    color: "text-emerald-500",
+    glow: "bg-emerald-500/10"
   },
-  "Tools & Professional": { 
-    icon: Terminal, 
-    color: "text-amber-500", 
-    glow: "bg-amber-500/10" 
+  "Tools & Professional": {
+    icon: Terminal,
+    color: "text-amber-500",
+    glow: "bg-amber-500/10"
   },
 };
 
@@ -85,7 +86,7 @@ const SkillSection = () => {
     <section id="skills" className="py-32 bg-background relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(var(--primary-rgb),0.03)_0%,transparent_100%)]" />
-      
+
       <Container>
         <motion.div
           ref={ref}
@@ -167,7 +168,7 @@ const SkillSection = () => {
 
                                  {/* Minimalist Progress */}
                                  <div className="h-1 w-full bg-secondary/30 rounded-full overflow-hidden relative">
-                                    <motion.div 
+                                    <motion.div
                                       initial={{ width: 0 }}
                                       animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
                                       transition={{ duration: 1.5, delay: 0.1 + (index * 0.1) + (sIdx * 0.05), ease: "easeOut" }}

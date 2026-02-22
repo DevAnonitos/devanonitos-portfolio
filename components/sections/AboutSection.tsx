@@ -1,16 +1,15 @@
 "use client"
 
-import React from 'react';
 import Container from '@/components/layout/Container';
-import { motion } from 'motion/react';
 import { Badge } from '@/components/ui/badge';
 import { DEVELOPER_INFO } from '@/constants';
+import { FADE_IN_UP, REVEAL_LEFT, STAGGER_CONTAINER } from '@/constants/animations';
 import { useScrollReveal } from '@/hooks';
-import { FADE_IN_UP, STAGGER_CONTAINER, REVEAL_LEFT, REVEAL_RIGHT } from '@/constants/animations';
-import { Code2, Cpu, Globe, Rocket, User, Sparkles } from 'lucide-react';
-import Image from 'next/image';
+import { AboutStat } from '@/types';
+import { Code2, Cpu, Globe, Rocket, Sparkles, User } from 'lucide-react';
+import { motion } from 'motion/react';
 
-const STATS = [
+const STATS: AboutStat[] = [
   { label: 'Years of Experience', value: '5+', icon: Cpu },
   { label: 'Project Completed', value: '50+', icon: Rocket },
   { label: 'Happy Clients', value: '30+', icon: User },
@@ -53,9 +52,9 @@ const AboutSection = () => {
                   </div>
                </div>
             </div>
-            
+
             {/* Floating decoration elements */}
-            <motion.div 
+            <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-6 -right-6 p-3 rounded-2xl bg-background shadow-xl border border-border/50 hidden md:block"
@@ -77,20 +76,20 @@ const AboutSection = () => {
                 Hi, I&apos;m <span className="text-foreground font-medium">{DEVELOPER_INFO.name}</span>. {DEVELOPER_INFO.bio}
               </p>
               <p className="text-muted-foreground text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
-                With a strong foundation in modern web technologies, I focus on building scalable, 
-                user-centric applications that solve real-world problems. I believe in clean code, 
+                With a strong foundation in modern web technologies, I focus on building scalable,
+                user-centric applications that solve real-world problems. I believe in clean code,
                 thoughtful design, and continuous learning.
               </p>
             </motion.div>
 
             {/* Stats Grid */}
-            <motion.div 
+            <motion.div
               variants={FADE_IN_UP}
               className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4"
             >
               {STATS.map((stat, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="p-4 rounded-2xl bg-card border border-border/50 text-center space-y-2 transition-colors hover:border-primary/30"
                 >
                   <div className="flex justify-center">

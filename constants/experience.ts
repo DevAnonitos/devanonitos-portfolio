@@ -1,7 +1,9 @@
+import { Experience } from "@/types";
+
 /**
  * Career timeline data
  */
-export const EXPERIENCES = [
+export const EXPERIENCES: Experience[] = [
   {
     company: "Office of Student Affairs & Communications, Ho Chi Minh City Open University (HCMCOU)",
     role: "Student Collaborator",

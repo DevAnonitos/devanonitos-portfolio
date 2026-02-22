@@ -1,8 +1,11 @@
+import { Testimonial } from "@/types";
+
 /**
  * User testimonials and feedback data
  */
-export const TESTIMONIALS = [
+export const TESTIMONIALS: Testimonial[] = [
   {
+    id: "testi-1",
     name: "Alex Thompson",
     role: "Senior Project Manager at TechFlow",
     content: "Working with this developer was a game-changer for our platform. The attention to detail in the UI and the robustness of the backend architecture exceeded our expectations.",
@@ -10,6 +13,7 @@ export const TESTIMONIALS = [
     rating: 5
   },
   {
+    id: "testi-2",
     name: "Sarah Chen",
     role: "Lead Data Scientist at InsightAI",
     content: "A rare find—someone who truly understands both Data Science and Fullstack development. They transformed our complex data models into a beautiful, intuitive dashboard.",
@@ -17,6 +21,7 @@ export const TESTIMONIALS = [
     rating: 5
   },
   {
+    id: "testi-3",
     name: "Michael Rodriguez",
     role: "Founder of StartupX",
     content: "Professional, proactive, and technically brilliant. They took our vision and turned it into a high-performance reality in record time. Highly recommended!",
@@ -24,6 +29,7 @@ export const TESTIMONIALS = [
     rating: 5
   },
   {
+    id: "testi-4",
     name: "Emily Watson",
     role: "UX Director at CreativeDesign",
     content: "The animations and micro-interactions they implemented are world-class. It's rare to work with a developer who has such a sharp eye for aesthetic excellence.",
@@ -31,6 +37,7 @@ export const TESTIMONIALS = [
     rating: 5
   },
   {
+    id: "testi-5",
     name: "David Kim",
     role: "CTO at CloudSolutions",
     content: "Exceptional code quality and system architecture design. They helped us scale our infrastructure while maintaining a pixel-perfect frontend experience.",
@@ -38,6 +45,7 @@ export const TESTIMONIALS = [
     rating: 5
   },
   {
+    id: "testi-6",
     name: "Jessica Lee",
     role: "Product Owner at FintechHub",
     content: "Reliable, communicative, and technically versatile. They handled everything from our mobile-responsive layouts to secure payment integrations flawlessly.",

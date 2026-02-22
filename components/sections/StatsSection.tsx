@@ -1,33 +1,32 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
 import Container from "@/components/layout/Container"
-import { motion, useSpring, useTransform, useInView } from "motion/react"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Trophy, 
-  Code2, 
-  Users2, 
-  Globe2, 
-  Zap,
-  Cpu
-} from "lucide-react"
-import { useScrollReveal } from "@/hooks"
 import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
+import { useScrollReveal } from "@/hooks"
 import { cn } from "@/lib/utils"
+import {
+    Code2,
+    Cpu,
+    Trophy,
+    Users2,
+    Zap
+} from "lucide-react"
+import { motion, useInView, useSpring, useTransform } from "motion/react"
+import { useEffect, useRef } from "react"
 
 // Component: Animated Counter Number
 const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, amount: 0.5 })
-  
+
   const spring = useSpring(0, {
     mass: 1,
     stiffness: 100,
     damping: 30,
   })
-  
-  const display = useTransform(spring, (current) => 
+
+  const display = useTransform(spring, (current) =>
     Math.round(current).toLocaleString()
   )
 
@@ -45,7 +44,7 @@ const Counter = ({ value, suffix = "" }: { value: number; suffix?: string }) => 
   )
 }
 
-const STATS = [
+const STATS: Stat[] = [
   {
     label: "Years of Experience",
     value: 5,
@@ -112,7 +111,7 @@ const StatsSection = () => {
               Numbers that define <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600 font-black">Performance</span>
             </motion.h2>
             <motion.p variants={FADE_IN_UP} className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-              Behind every line of code resides a commitment to excellence, 
+              Behind every line of code resides a commitment to excellence,
               delivering tangible results through measurable impact.
             </motion.p>
           </div>
@@ -161,7 +160,7 @@ const StatsSection = () => {
           </div>
 
           {/* Bottom Trust Badge Decoration */}
-          <motion.div 
+          <motion.div
             variants={FADE_IN_UP}
             className="pt-12 flex flex-col items-center gap-6"
           >

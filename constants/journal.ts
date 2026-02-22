@@ -1,4 +1,6 @@
-export const JOURNAL_POSTS = [
+import { JournalPost } from "@/types";
+
+export const JOURNAL_POSTS: JournalPost[] = [
   {
     id: "post-1",
     title: "Mastering Next.js 14 Server Actions",

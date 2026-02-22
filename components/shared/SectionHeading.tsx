@@ -1,10 +1,5 @@
-import React from 'react';
 
-interface SectionHeadingProps {
-  title: string;
-  subtitle?: string;
-  alignment?: 'left' | 'center' | 'right';
-}
+import { SectionHeadingProps } from '@/types';
 
 const SectionHeading = ({ title, subtitle, alignment = 'center' }: SectionHeadingProps) => {
   return (

@@ -1,39 +1,37 @@
 "use client"
 
-import React from 'react';
 import Container from '@/components/layout/Container';
-import { motion } from 'motion/react';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { 
-  SOCIAL_LINKS, 
-  DEVELOPER_INFO 
+import {
+    DEVELOPER_INFO,
+    SOCIAL_LINKS
 } from '@/constants';
-import { 
-  Mail, 
-  MapPin, 
-  Send, 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  MessageSquare,
-  Sparkles
-} from 'lucide-react';
-import { useScrollReveal } from '@/hooks';
-import { 
-  FADE_IN_UP, 
-  STAGGER_CONTAINER, 
-  REVEAL_LEFT, 
-  REVEAL_RIGHT 
+import {
+    REVEAL_LEFT,
+    REVEAL_RIGHT,
+    STAGGER_CONTAINER
 } from '@/constants/animations';
+import { useScrollReveal } from '@/hooks';
+import {
+    Github,
+    Linkedin,
+    Mail,
+    MapPin,
+    MessageSquare,
+    Send,
+    Sparkles,
+    Twitter
+} from 'lucide-react';
+import { motion } from 'motion/react';
 import Link from 'next/link';
 
 const ContactSection = () => {
   const { ref, controls } = useScrollReveal();
 
-  const CONTACT_INFO = [
+  const CONTACT_INFO: ContactInfoItem[] = [
     {
       icon: Mail,
       label: "Email Me",
@@ -82,14 +80,14 @@ const ContactSection = () => {
                 Let&apos;s Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Legendary</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
-                Have a project in mind or just want to chat? Feel free to reach out. 
+                Have a project in mind or just want to chat? Feel free to reach out.
                 I&apos;m always open to new opportunities and creative collaborations.
               </p>
             </div>
 
             <div className="grid gap-6">
               {CONTACT_INFO.map((item, index) => (
-                <Link 
+                <Link
                   key={index}
                   href={item.href || "#"}
                   className={item.href ? "group" : "pointer-events-none"}
@@ -115,9 +113,9 @@ const ContactSection = () => {
                   { icon: Linkedin, href: SOCIAL_LINKS.linkedin },
                   { icon: Twitter, href: SOCIAL_LINKS.twitter },
                 ].map((social, i) => (
-                  <Link 
-                    key={i} 
-                    href={social.href} 
+                  <Link
+                    key={i}
+                    href={social.href}
                     target="_blank"
                     className="p-4 rounded-2xl bg-card border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/30 transition-all hover:-translate-y-1 shadow-sm"
                   >
@@ -141,33 +139,33 @@ const ContactSection = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold ml-1">Your Name</label>
-                    <Input 
-                      placeholder="John Doe" 
+                    <Input
+                      placeholder="John Doe"
                       className="rounded-2xl h-12 bg-background/50 border-border/50 focus:border-primary/50 transition-all"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold ml-1">Email Address</label>
-                    <Input 
-                      type="email" 
-                      placeholder="john@example.com" 
+                    <Input
+                      type="email"
+                      placeholder="john@example.com"
                       className="rounded-2xl h-12 bg-background/50 border-border/50 focus:border-primary/50 transition-all"
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <label className="text-sm font-semibold ml-1">Subject</label>
-                  <Input 
-                    placeholder="Project Inquiry" 
+                  <Input
+                    placeholder="Project Inquiry"
                     className="rounded-2xl h-12 bg-background/50 border-border/50 focus:border-primary/50 transition-all"
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold ml-1">Message</label>
-                  <Textarea 
-                    placeholder="Tell me about your project..." 
+                  <Textarea
+                    placeholder="Tell me about your project..."
                     className="rounded-2xl min-h-[160px] bg-background/50 border-border/50 focus:border-primary/50 transition-all resize-none"
                   />
                 </div>
@@ -176,7 +174,7 @@ const ContactSection = () => {
                   Send Message
                   <Send className="ml-2 size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Button>
-                
+
                 <p className="text-[10px] text-center text-muted-foreground/60 font-medium uppercase tracking-widest pt-2">
                   Average response time: &lt; 24 hours
                 </p>

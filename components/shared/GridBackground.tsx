@@ -2,12 +2,7 @@
 
 import { cn } from "@/lib/utils"
 
-interface GridBackgroundProps {
-  className?: string
-  dotColor?: string
-  gridColor?: string
-  variant?: "dot" | "grid" | "mesh"
-}
+import { GridBackgroundProps } from "@/types"
 
 const GridBackground = ({
   className,
