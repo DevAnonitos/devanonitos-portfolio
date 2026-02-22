@@ -47,10 +47,9 @@ const HeroSection = () => {
             </Badge>
           </motion.div>
 
-          {/* Main Headline */}
           <div className="space-y-4">
-            <motion.h1 variants={FADE_IN_UP} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Digital Experiences</span> That Matter.
+            <motion.h1 variants={FADE_IN_UP} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading">
+              Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Digital Experiences</span>
             </motion.h1>
             <motion.p variants={FADE_IN_UP} className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               I&apos;m <span className="text-foreground font-semibold">{DEVELOPER_INFO.name}</span>, a {DEVELOPER_INFO.role} based in {DEVELOPER_INFO.location}. 

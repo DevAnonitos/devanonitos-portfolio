@@ -3,6 +3,12 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/sections/HeroSection";
 import { SectionLoading } from "@/components/shared";
 
+const StatsSection = dynamic(() => import("@/components/sections/StatsSection"), {
+  loading: () => <SectionLoading />,
+});
+const ServiceSection = dynamic(() => import("@/components/sections/ServiceSection"), {
+  loading: () => <SectionLoading />,
+});
 const TestimonialSection = dynamic(() => import("@/components/sections/TestimonialSection"), {
   loading: () => <SectionLoading />,
 });
@@ -19,9 +25,17 @@ export default function Home() {
       <HeroSection />
 
       <Suspense fallback={<SectionLoading />}>
-        <TestimonialSection />
+        <StatsSection />
       </Suspense>
 
+      <Suspense fallback={<SectionLoading />}>
+        <ServiceSection />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoading />}>
+        <TestimonialSection />
+      </Suspense>
+      
       <Suspense fallback={<SectionLoading />}>
         <FAQSection />
       </Suspense>

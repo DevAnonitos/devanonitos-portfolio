@@ -16,3 +16,4 @@ export { default as TermsSection } from './TermsSection';
 export { default as CookiesSection } from './CookiesSection';
 export { default as NotFoundSection } from './NotFoundSection';
 export { default as ErrorSection } from './ErrorSection';
+export { default as StatsSection } from './StatsSection';
