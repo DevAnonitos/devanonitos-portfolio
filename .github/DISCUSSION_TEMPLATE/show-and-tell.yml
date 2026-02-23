@@ -1,0 +1,30 @@
+# Professional Show and Tell Template
+title: "🙌 [Show & Tell]: "
+labels: ["showcase"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Showcase Your Work!
+        Shared what you have built or achieved with this project. We love seeing community contributions!
+  - type: textarea
+    attributes:
+      label: Project Description
+      description: What did you build or achieve?
+      placeholder: Describe your amazing work...
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Link(s)
+      description: Provide links to your project, demo, or code.
+      placeholder: https://github.com/... or https://your-demo.com
+  - type: textarea
+    attributes:
+      label: Screenshots / Videos
+      description: Visuals are always appreciated!
+      placeholder: Drag and drop images here...
+  - type: textarea
+    attributes:
+      label: Feedback Request
+      description: Is there anything specific you would like feedback on?

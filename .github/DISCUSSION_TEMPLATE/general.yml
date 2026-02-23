@@ -1,0 +1,21 @@
+# Professional General Discussion Template
+title: "💬 [General]: "
+labels: ["discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 👋 General Discussion
+        Use this space for anything that does not fit into other categories. Keep it professional and respectful!
+  - type: textarea
+    attributes:
+      label: Topic
+      description: What would you like to discuss?
+      placeholder: Share your thoughts...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Goals
+      description: What is the goal of this discussion?
+      placeholder: e.g., Gathering feedback, starting a conversation, etc.

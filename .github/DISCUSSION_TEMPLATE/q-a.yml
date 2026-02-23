@@ -1,0 +1,29 @@
+# Professional Q&A Template
+title: "❓ [Question]: "
+labels: ["question", "help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔭 Need some help?
+        Before asking, please search existing discussions and issues to see if your question has already been answered.
+  - type: textarea
+    attributes:
+      label: Your Question
+      description: What do you need help with?
+      placeholder: Ask your question clearly...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What have you tried?
+      description: Describe what you have attempted to do so far.
+      placeholder: |
+        - Tried searching documentation...
+        - Attempted following this guide...
+        - Looked at these similar discussions...
+  - type: textarea
+    attributes:
+      label: Context & Environment
+      description: Provide details about your setup (OS, Node version, environment, etc.).
+      placeholder: OS: Windows, Node: v20.x, Environment: Local dev

@@ -1,0 +1,29 @@
+# Professional Announcement Template
+title: "📣 [Announcement]: "
+labels: ["announcement", "news"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📢 Important Project Update!
+        Provide a concise summary of the announcement here. Highlight key changes, milestones, or news.
+  - type: textarea
+    attributes:
+      label: Description
+      description: Detailed information about the announcement.
+      placeholder: |
+        - What is changing?
+        - Why is it changing?
+        - How does this affect users?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Action Required
+      description: Is there anything users or contributors need to do?
+      placeholder: e.g., Update your dependencies, check the new documentation, etc.
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        *Stay tuned for more updates!*
