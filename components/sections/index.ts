@@ -18,4 +18,4 @@ export { default as SkillSection } from './SkillSection';
 export { default as StatsSection } from './StatsSection';
 export { default as TermsSection } from './TermsSection';
 export { default as TestimonialSection } from './TestimonialSection';
-
+export { default as AccessibilitySection } from './AccessibilitySection';

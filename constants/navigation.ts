@@ -41,6 +41,7 @@ export const FOOTER_LINKS = [
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Service', href: '/terms' },
       { label: 'Cookie Policy', href: '/cookies' },
+      { label: 'Accessibility', href: '/accessibility' },
     ],
   },
 ]
