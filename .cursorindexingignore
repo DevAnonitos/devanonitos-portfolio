@@ -1,0 +1,49 @@
+# Performance Indexing: Speed up codebase search and indexing
+# These files are safe for AI to see if explicitly mentioned, but shouldn't be indexed for global search.
+
+# Large generated directories
+node_modules/
+.next/
+out/
+build/
+dist/
+.swc/
+.idx/
+.vercel/
+
+# AI Tools & Agent Internal data
+.agent/
+.agents/
+.cursor/
+
+# Static Assets (No code logic here to index)
+public/
+vendor/
+
+# Test snapshots and coverage
+__snapshots__/
+coverage/
+.nyc_output/
+
+# Documentation & Media
+docs/
+assets/
+**/*.mdx
+**/*.md
+
+# Cache & Temp
+.cache/
+.temp/
+.tmp/
+.vercel/
+.swc/
+
+# Large JSON data files (indexing them slows down symbol search)
+**/*.json
+!package.json
+!tsconfig.json
+!next.config.json
+
+# Exclude minified files
+**/*.min.js
+**/*.min.css
