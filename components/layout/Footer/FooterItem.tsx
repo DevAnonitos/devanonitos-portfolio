@@ -22,6 +22,8 @@ const FooterItem = ({ title, links, className, onNavigate }: FooterItemProps) =>
           <li key={link.label}>
             <Link
               href={link.href}
+              prefetch={true}
+              scroll={true}
               onClick={onNavigate}
               className='text-sm text-muted-foreground transition-colors hover:text-foreground'
             >

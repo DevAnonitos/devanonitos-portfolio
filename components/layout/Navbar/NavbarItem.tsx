@@ -53,6 +53,8 @@ const NavbarItem = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
+                  prefetch={true}
+                  scroll={true}
                   className={cn(
                     'inline-flex rounded-full px-3 py-1.5 text-sm font-medium transition-colors',
                     isActive
@@ -67,7 +69,7 @@ const NavbarItem = () => {
           })}
         </ul>
 
-        
+
       </div>
 
       {/* <div className='flex items-center gap-1 md:hidden'>
