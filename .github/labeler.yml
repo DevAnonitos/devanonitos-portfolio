@@ -1,17 +1,40 @@
+# PR label rules for stable prod/dev pipeline triage
+
 docs:
   - changed-files:
-      - all-globs-to-all-files:
+      - any-glob-to-any-file:
           - '**/*.md'
           - '**/*.mdc'
           - '**/*.mdx'
+          - 'docs/**'
+          - 'README*'
+          - 'CHANGELOG*'
+          - 'CONTRIBUTING*'
 
 styles:
   - changed-files:
-      - all-globs-to-all-files:
+      - any-glob-to-any-file:
           - '**/*.css'
           - '**/*.scss'
+          - '**/*.sass'
           - '**/*.module.css'
-          - '**/*.tailwind.*'
+
+ui:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'components/**'
+          - 'public/**'
+
+app-router:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'app/**'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+          - 'scripts/**'
 
 test:
   - changed-files:
@@ -19,72 +42,51 @@ test:
           - '**/*.test.*'
           - '**/*.spec.*'
           - '**/__tests__/**'
-
-ci:
-  - changed-files:
-      - any-glob-to-any-file:
-          - '.github/**'
+          - 'jest.config.*'
+          - 'jest.setup.*'
 
 config:
   - changed-files:
       - any-glob-to-any-file:
           - '**/*.json'
-          - '**/*.env*'
+          - '**/*.yaml'
+          - '**/*.yml'
+          - '*.config.*'
           - 'tsconfig.*'
-          - 'next.config.*'
-
-ui:
-  - changed-files:
-      - any-glob-to-any-file:
-          - 'components/**'
-          - 'src/components/**'
-
-app-router:
-  - changed-files:
-      - any-glob-to-any-file:
-          - 'app/**'
-          - 'src/app/**'
-
-feature:
-  - all:
-      - head-branch: ['^feature', '^feat']
-      - changed-files:
-          - any-glob-to-any-file:
-              - 'src/**'
-              - 'app/**'
-
-bug:
-  - all:
-      - head-branch: ['^fix', '^bug']
-      - changed-files:
-          - any-glob-to-any-file:
-              - 'src/**'
-              - 'app/**'
-
-perf:
-  - head-branch: ['^perf']
-
-chore:
-  - head-branch: ['^chore']
+          - '.env*'
 
 deps:
-  - all:
-      - head-branch: ['^deps', '^upgrade']
-      - changed-files:
-          - any-glob-to-any-file:
-              - 'package.json'
-              - 'package-lock.json'
-              - 'yarn.lock'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+          - 'yarn.lock'
+          - 'pnpm-lock.yaml'
+          - '.github/dependabot.yml'
+          - '.github/renovate.json'
 
-wip:
-  - head-branch: ['^wip']
+prod:
+  - base-branch: ['^main$']
+
+dev:
+  - base-branch: ['^(develop|dev)$']
+
+feature:
+  - head-branch: ['^(feature|feat)/.+']
+
+bug:
+  - head-branch: ['^(fix|bugfix)/.+']
 
 hotfix:
-  - head-branch: ['^hotfix']
+  - head-branch: ['^hotfix/.+']
+
+chore:
+  - head-branch: ['^chore/.+']
 
 release:
   - all:
-      - base-branch: 'main'
-      - changed-files:
-          - any-glob-to-any-file:
-              - 'CHANGELOG.md'
+      - base-branch: ['^main$']
+      - head-branch: ['^release/.+']
+
+wip:
+  - head-branch: ['^(wip|draft)/.+']
