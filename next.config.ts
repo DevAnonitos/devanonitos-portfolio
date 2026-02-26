@@ -3,6 +3,7 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   compress: true,
   output: 'standalone',
+  crossOrigin: 'anonymous',
   trailingSlash: true,
   reactStrictMode: true,
   poweredByHeader: false,
@@ -91,7 +92,6 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForDev: true,
     // turbopackFileSystemCacheForBuild: true, // Only if using turbopack for build
   },
-
   typescript: {
     // Recommendation: Keep errors on for production stability,
     // but this is the project setting.

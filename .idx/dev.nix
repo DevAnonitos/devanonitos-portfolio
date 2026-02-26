@@ -2,12 +2,13 @@
   channel = "stable-24.05";
   packages = [
     pkgs.git
+    pkgs.gitlab
     pkgs.vscode
     pkgs.yamlfmt
     pkgs.nodejs_20
     pkgs.typescript
   ];
-  idx.extensions = [ 
+  idx.extensions = [
     "bradlc.vscode-tailwindcss"
     "esbenp.prettier-vscode"
     "GitHub.vscode-pull-request-github"
@@ -15,19 +16,19 @@
   ];
   idx.previews = {
     previews = {
-      web = {
-        command = [
-          "npm"
-          "run"
-          "dev"
-          "--"
-          "--port"
-          "$PORT"
-          "--hostname"
-          "0.0.0.0"
-        ];
-        manager = "web";
-      };
+      # web = {
+      #   # command = [
+      #   #   "npm"
+      #   #   "run"
+      #   #   "dev"
+      #   #   "--"
+      #   #   "--port"
+      #   #   "$PORT"
+      #   #   "--hostname"
+      #   #   "0.0.0.0"
+      #   # ];
+      #   # manager = "web";
+      # };
     };
   };
 }

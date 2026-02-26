@@ -95,11 +95,5 @@
   "git.confirmSync": false,
 
   // Miscellaneous
-  "security.workspace.trust.untrustedFiles": "open",
   "search.useIgnoreFiles": true,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/.next": true
-  }
 }
