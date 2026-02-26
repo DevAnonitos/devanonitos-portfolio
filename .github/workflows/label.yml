@@ -25,6 +25,7 @@ jobs:
     steps:
       - name: Apply labels from .github/labeler.yml
         uses: actions/labeler@v5
+      - uses: actions/labeler@v6
         with:
           sync-labels: true
           dot: true
