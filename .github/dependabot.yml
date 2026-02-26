@@ -1,11 +1,61 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
+
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: npm
+    directory: "/"
     schedule:
-      interval: "weekly"
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: "Asia/Ho_Chi_Minh"
+    open-pull-requests-limit: 15
+    cooldown:
+      default-days: 3
+      semver-major-days: 7
+      semver-minor-days: 3
+      semver-patch-days: 1
+    versioning-strategy: increase-if-necessary
+    rebase-strategy: auto
+    labels:
+      - dependencies
+      - npm
+      - automerge-candidate
+    commit-message:
+      prefix: "deps"
+      include: scope
+    groups:
+      production-dependencies:
+        applies-to: version-updates
+        dependency-type: production
+        patterns:
+          - "*"
+      development-tooling:
+        applies-to: version-updates
+        dependency-type: development
+        patterns:
+          - "*"
+      security-hotfix:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:30"
+      timezone: "Asia/Ho_Chi_Minh"
+    open-pull-requests-limit: 10
+    rebase-strategy: auto
+    labels:
+      - dependencies
+      - github-actions
+      - ci
+    commit-message:
+      prefix: "ci"
+      include: scope
+    groups:
+      github-actions:
+        patterns:
+          - "*"
