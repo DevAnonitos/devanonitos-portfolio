@@ -1,9 +1,7 @@
 const path = require('path')
 
 const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
-    .map((f) => path.relative(process.cwd(), f))
-    .join(' --file ')}`
+  `next lint --fix --file ${filenames.map((f) => path.relative(process.cwd(), f)).join(' --file ')}`
 
 module.exports = {
   // Lint & Format JS/TS files
@@ -15,4 +13,3 @@ module.exports = {
   // Format non-code files
   '*.{css,scss,json,md,html}': ['prettier --write'],
 }
-

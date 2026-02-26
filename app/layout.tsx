@@ -1,20 +1,20 @@
-import { AppLayout } from "@/components/layout";
-import { ThemeProvider } from "@/components/providers";
-import { BackToTop, GridBackground, WebVitals } from "@/components/shared";
-import { SITE_CONFIG } from "@/constants/site";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../styles/globals.css";
+import { AppLayout } from '@/components/layout'
+import { ThemeProvider } from '@/components/providers'
+import { BackToTop, GridBackground, WebVitals } from '@/components/shared'
+import { SITE_CONFIG } from '@/constants/site'
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import '../styles/globals.css'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
       absolute: SITE_CONFIG.title,
       template: `%s | ${SITE_CONFIG.title}`,
     },
-    category: "Technology",
+    category: 'Technology',
     applicationName: SITE_CONFIG.title,
     metadataBase: new URL(SITE_CONFIG.url),
     creator: SITE_CONFIG.author,
@@ -31,20 +31,16 @@ export async function generateMetadata(): Promise<Metadata> {
     authors: { name: SITE_CONFIG.author },
     description: SITE_CONFIG.description,
     keywords: SITE_CONFIG.keywords,
-    archives: [
-      "https://nextjs.org/16",
-      "https://react.dev/",
-      "https://tailwindcss.com/"
-    ],
-    manifest: "/manifest.webmanifest",
+    archives: ['https://nextjs.org/16', 'https://react.dev/', 'https://tailwindcss.com/'],
+    manifest: '/manifest.webmanifest',
     icons: {
-      icon: "/favicon.ico",
-      shortcut: "/",
-      apple: "/apple-touch-icon.png",
+      icon: '/favicon.ico',
+      shortcut: '/',
+      apple: '/apple-touch-icon.png',
       other: {
         rel: 'apple-touch-icon-precomposed',
         url: '/apple-touch-icon-precomposed.png',
-      }
+      },
     },
     robots: {
       index: true,
@@ -62,8 +58,8 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical: SITE_CONFIG.url,
       languages: {
-        "en-US": SITE_CONFIG.url,
-        "vi-VN": SITE_CONFIG.url,
+        'en-US': SITE_CONFIG.url,
+        'vi-VN': SITE_CONFIG.url,
       },
     },
     openGraph: {
@@ -83,37 +79,33 @@ export async function generateMetadata(): Promise<Metadata> {
       type: SITE_CONFIG.type,
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: SITE_CONFIG.title,
       description: SITE_CONFIG.description,
       images: [SITE_CONFIG.ogImage],
     },
-  };
+  }
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang='en' suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
+          attribute='class'
+          defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
           <GridBackground />
-          <AppLayout>
-            {children}
-          </AppLayout>
+          <AppLayout>{children}</AppLayout>
           <BackToTop />
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

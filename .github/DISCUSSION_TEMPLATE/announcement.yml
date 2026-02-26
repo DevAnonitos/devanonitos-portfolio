@@ -1,6 +1,6 @@
 # Professional Announcement Template
-title: "📣 [Announcement]: "
-labels: ["announcement", "news"]
+title: '📣 [Announcement]: '
+labels: ['announcement', 'news']
 body:
   - type: markdown
     attributes:

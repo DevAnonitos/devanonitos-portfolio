@@ -1,18 +1,18 @@
-import { Alignment } from "./common";
+import { Alignment } from './common'
 
 export interface SectionHeadingProps {
-  title: string;
-  subtitle?: string;
-  alignment?: Alignment;
+  title: string
+  subtitle?: string
+  alignment?: Alignment
 }
 
 export interface GridBackgroundProps {
-  className?: string;
-  dotColor?: string;
-  gridColor?: string;
-  variant?: "dot" | "grid" | "mesh";
+  className?: string
+  dotColor?: string
+  gridColor?: string
+  variant?: 'dot' | 'grid' | 'mesh'
 }
 
 export interface PageTransitionProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }

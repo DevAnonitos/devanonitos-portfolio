@@ -1,8 +1,8 @@
-import { TermsSection } from "@/components/sections"
+import { TermsSection } from '@/components/sections'
 
 const TermsPage = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className='flex w-full flex-col'>
       <TermsSection />
     </div>
   )

@@ -142,11 +142,12 @@
     background-clip: padding-box, border-box;
   }
   .text-gradient {
-    @apply bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent;
+    @apply from-foreground to-muted-foreground bg-gradient-to-r bg-clip-text text-transparent;
   }
   .border-gradient {
     @apply border border-transparent bg-origin-border;
-    background-image: linear-gradient(var(--background), var(--background)),
+    background-image:
+      linear-gradient(var(--background), var(--background)),
       linear-gradient(135deg, color-mix(in oklch, var(--primary) 60%, white), var(--accent));
     background-clip: padding-box, border-box;
   }

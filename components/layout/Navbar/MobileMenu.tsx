@@ -19,27 +19,20 @@ interface MobileMenuProps {
   ctaLabel: string
 }
 
-const MobileMenu = ({
-  isOpen,
-  onClose,
-  links,
-  activeHref,
-  ctaHref,
-  ctaLabel,
-}: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose, links, activeHref, ctaHref, ctaLabel }: MobileMenuProps) => {
   if (!isOpen) return null
 
   return (
-    <div className='fixed inset-0 z-[60] bg-background/80 backdrop-blur-sm md:hidden'>
+    <div className='bg-background/80 fixed inset-0 z-[60] backdrop-blur-sm md:hidden'>
       <button
         className='absolute inset-0 h-full w-full cursor-default'
         onClick={onClose}
         aria-label='Close mobile menu overlay'
       />
 
-      <div className='fixed inset-y-0 right-0 z-10 w-full max-w-sm border-l border-border/50 bg-background p-6 shadow-2xl'>
+      <div className='border-border/50 bg-background fixed inset-y-0 right-0 z-10 w-full max-w-sm border-l p-6 shadow-2xl'>
         <div className='mb-8 flex items-center justify-between'>
-          <p className='text-sm font-semibold tracking-wide text-muted-foreground'>Menu</p>
+          <p className='text-muted-foreground text-sm font-semibold tracking-wide'>Menu</p>
           <Button variant='ghost' size='icon-sm' onClick={onClose} aria-label='Close menu'>
             <X className='size-4' />
           </Button>
@@ -58,7 +51,7 @@ const MobileMenu = ({
                     'block rounded-xl border px-4 py-3 text-base font-medium transition',
                     isActive
                       ? 'border-primary/30 bg-primary/10 text-foreground'
-                      : 'border-transparent text-muted-foreground hover:border-border/60 hover:bg-muted/60 hover:text-foreground',
+                      : 'text-muted-foreground hover:border-border/60 hover:bg-muted/60 hover:text-foreground border-transparent',
                   )}
                 >
                   {link.label}

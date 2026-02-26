@@ -1,6 +1,6 @@
 # Professional General Discussion Template
-title: "💬 [General]: "
-labels: ["discussion"]
+title: '💬 [General]: '
+labels: ['discussion']
 body:
   - type: markdown
     attributes:

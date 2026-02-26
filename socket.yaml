@@ -1,8 +1,8 @@
 version: 2
 
 triggerPaths:
-  - "package.json"
-  - "package-lock.json"
+  - 'package.json'
+  - 'package-lock.json'
 
 issueRules:
   didYouMean: true
@@ -18,7 +18,7 @@ issueRules:
   unresolvedRequire: true
 
 githubApp:
-  enabled: true 
+  enabled: true
   projectReportsEnabled: true
   pullRequestAlertsEnabled: true
   dependencyOverviewEnabled: true

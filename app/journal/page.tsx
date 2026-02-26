@@ -1,9 +1,9 @@
-import { JournalSection } from "@/components/sections"
+import { JournalSection } from '@/components/sections'
 
 const JournalPage = () => {
   return (
-    <div className='flex flex-col w-full'>
-      <JournalSection />  
+    <div className='flex w-full flex-col'>
+      <JournalSection />
     </div>
   )
 }

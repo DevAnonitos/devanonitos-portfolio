@@ -22,60 +22,60 @@ const colors = {
   bgGreen: '\x1b[42m',
   bgYellow: '\x1b[43m',
   bgBlue: '\x1b[44m',
-};
+}
 
 class Logger {
   constructor(prefix = '') {
-    this.prefix = prefix;
+    this.prefix = prefix
   }
 
   _log(color, icon, message, ...args) {
-    const timestamp = new Date().toLocaleTimeString();
-    const prefixStr = this.prefix ? `[${this.prefix}] ` : '';
+    const timestamp = new Date().toLocaleTimeString()
+    const prefixStr = this.prefix ? `[${this.prefix}] ` : ''
     console.log(
       `${colors.dim}${timestamp}${colors.reset} ${color}${icon}${colors.reset} ${prefixStr}${message}`,
-      ...args
-    );
+      ...args,
+    )
   }
 
   info(message, ...args) {
-    this._log(colors.blue, 'ℹ', message, ...args);
+    this._log(colors.blue, 'ℹ', message, ...args)
   }
 
   success(message, ...args) {
-    this._log(colors.green, '✓', message, ...args);
+    this._log(colors.green, '✓', message, ...args)
   }
 
   warn(message, ...args) {
-    this._log(colors.yellow, '⚠', message, ...args);
+    this._log(colors.yellow, '⚠', message, ...args)
   }
 
   error(message, ...args) {
-    this._log(colors.red, '✖', message, ...args);
+    this._log(colors.red, '✖', message, ...args)
   }
 
   debug(message, ...args) {
-    this._log(colors.magenta, '●', message, ...args);
+    this._log(colors.magenta, '●', message, ...args)
   }
 
   start(message, ...args) {
-    this._log(colors.cyan, '▶', message, ...args);
+    this._log(colors.cyan, '▶', message, ...args)
   }
 
   header(message) {
-    console.log('\n' + colors.bright + colors.cyan + '═'.repeat(60) + colors.reset);
-    console.log(colors.bright + colors.cyan + message + colors.reset);
-    console.log(colors.bright + colors.cyan + '═'.repeat(60) + colors.reset + '\n');
+    console.log('\n' + colors.bright + colors.cyan + '═'.repeat(60) + colors.reset)
+    console.log(colors.bright + colors.cyan + message + colors.reset)
+    console.log(colors.bright + colors.cyan + '═'.repeat(60) + colors.reset + '\n')
   }
 
   section(message) {
-    console.log('\n' + colors.bright + message + colors.reset);
-    console.log(colors.dim + '─'.repeat(40) + colors.reset);
+    console.log('\n' + colors.bright + message + colors.reset)
+    console.log(colors.dim + '─'.repeat(40) + colors.reset)
   }
 }
 
 // Export singleton instance
-export const logger = new Logger();
+export const logger = new Logger()
 
 // Export class for custom instances
-export default Logger;
+export default Logger

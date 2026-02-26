@@ -1,61 +1,70 @@
-"use client"
+'use client'
 
-import Container from "@/components/layout/Container"
-import { Badge } from "@/components/ui/badge"
-import { FADE_IN_UP, STAGGER_CONTAINER } from "@/constants/animations"
-import { HOBBIES } from "@/constants/hobbies"
-import { useScrollReveal } from "@/hooks"
-import { cn } from "@/lib/utils"
-import { motion } from "motion/react"
+import Container from '@/components/layout/Container'
+import { Badge } from '@/components/ui/badge'
+import { FADE_IN_UP, STAGGER_CONTAINER } from '@/constants/animations'
+import { HOBBIES } from '@/constants/hobbies'
+import { useScrollReveal } from '@/hooks'
+import { cn } from '@/lib/utils'
+import { motion } from 'motion/react'
 
 const HobbiesSection = () => {
   const { ref, controls } = useScrollReveal({ amount: 0.1 })
 
   return (
-    <section id="hobbies" className="py-24 relative overflow-hidden bg-background">
+    <section id='hobbies' className='bg-background relative overflow-hidden py-24'>
       {/* Background Ornaments */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] -z-10 -translate-x-1/2 translate-y-1/2" />
+      <div className='bg-primary/5 absolute top-0 right-0 -z-10 h-[500px] w-[500px] translate-x-1/2 -translate-y-1/2 rounded-full blur-[100px]' />
+      <div className='absolute bottom-0 left-0 -z-10 h-[600px] w-[600px] -translate-x-1/2 translate-y-1/2 rounded-full bg-blue-500/5 blur-[120px]' />
 
       <Container>
         <motion.div
           ref={ref}
-          initial="hidden"
+          initial='hidden'
           animate={controls}
           variants={STAGGER_CONTAINER}
-          className="space-y-16"
+          className='space-y-16'
         >
           {/* Header */}
-          <div className="text-center space-y-6 max-w-3xl mx-auto">
-            <motion.div variants={FADE_IN_UP} className="flex justify-center">
-              <Badge variant="outline" className="rounded-full px-6 py-2 text-primary border-primary/30 bg-primary/5 backdrop-blur-sm text-xs font-bold tracking-[0.2em] uppercase">
+          <div className='mx-auto max-w-3xl space-y-6 text-center'>
+            <motion.div variants={FADE_IN_UP} className='flex justify-center'>
+              <Badge
+                variant='outline'
+                className='text-primary border-primary/30 bg-primary/5 rounded-full px-6 py-2 text-xs font-bold tracking-[0.2em] uppercase backdrop-blur-sm'
+              >
                 Life Outside Code
               </Badge>
             </motion.div>
-            <motion.h2 variants={FADE_IN_UP} className="text-4xl md:text-7xl font-bold tracking-tight">
-              Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600 font-black">Architecture</span>
+            <motion.h2
+              variants={FADE_IN_UP}
+              className='text-4xl font-bold tracking-tight md:text-7xl'
+            >
+              Beyond the{' '}
+              <span className='from-primary bg-gradient-to-r to-blue-600 bg-clip-text font-black text-transparent'>
+                Architecture
+              </span>
             </motion.h2>
-            <motion.p variants={FADE_IN_UP} className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+            <motion.p
+              variants={FADE_IN_UP}
+              className='text-muted-foreground text-lg leading-relaxed md:text-xl'
+            >
               When I&apos;m not architecting systems, I&apos;m exploring new perspectives,
               disciplines, and cultures that fuel my creativity.
             </motion.p>
           </div>
 
           {/* Hobbies Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
             {HOBBIES.map((hobby, index) => (
               <HobbyCard key={index} hobby={hobby} index={index} />
             ))}
           </div>
 
           {/* Bottom Footnote */}
-          <motion.div
-            variants={FADE_IN_UP}
-            className="text-center pt-8"
-          >
-             <p className="text-[10px] font-mono font-bold tracking-[0.5em] text-muted-foreground/30 uppercase">
-               Balance // Creativity // Perspective
-             </p>
+          <motion.div variants={FADE_IN_UP} className='pt-8 text-center'>
+            <p className='text-muted-foreground/30 font-mono text-[10px] font-bold tracking-[0.5em] uppercase'>
+              Balance // Creativity // Perspective
+            </p>
           </motion.div>
         </motion.div>
       </Container>
@@ -67,42 +76,42 @@ const HobbyCard = ({ hobby, index }: { hobby: any; index: number }) => {
   const Icon = hobby.icon
 
   return (
-    <motion.div
-      className="group relative h-[400px] rounded-[3rem] overflow-hidden border border-border/50 bg-card/30 backdrop-blur-xl"
-    >
+    <motion.div className='group border-border/50 bg-card/30 relative h-[400px] overflow-hidden rounded-[3rem] border backdrop-blur-xl'>
       {/* Dynamic Background Mesh */}
-      <div className={cn(
-        "absolute inset-0 bg-gradient-to-br transition-opacity duration-700 opacity-40 group-hover:opacity-100",
-        hobby.color
-      )} />
+      <div
+        className={cn(
+          'absolute inset-0 bg-gradient-to-br opacity-40 transition-opacity duration-700 group-hover:opacity-100',
+          hobby.color,
+        )}
+      />
 
       {/* Content Container */}
-      <div className="relative h-full p-10 flex flex-col justify-between z-10">
+      <div className='relative z-10 flex h-full flex-col justify-between p-10'>
         {/* Icon & Decor */}
-        <div className="flex justify-between items-start">
-          <div className="p-4 rounded-2xl bg-background/50 border border-border/50 backdrop-blur-md group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-            <Icon className="size-6" />
+        <div className='flex items-start justify-between'>
+          <div className='bg-background/50 border-border/50 group-hover:bg-primary group-hover:text-primary-foreground rounded-2xl border p-4 backdrop-blur-md transition-all duration-500 group-hover:scale-110'>
+            <Icon className='size-6' />
           </div>
-          <span className="text-4xl font-black text-foreground/5 pointer-events-none group-hover:text-primary/10 transition-colors duration-500">
+          <span className='text-foreground/5 group-hover:text-primary/10 pointer-events-none text-4xl font-black transition-colors duration-500'>
             0{index + 1}
           </span>
         </div>
 
         {/* Text Details */}
-        <div className="space-y-4">
-          <h3 className="text-2xl font-bold tracking-tight text-foreground group-hover:translate-x-1 transition-transform">
+        <div className='space-y-4'>
+          <h3 className='text-foreground text-2xl font-bold tracking-tight transition-transform group-hover:translate-x-1'>
             {hobby.title}
           </h3>
-          <p className="text-muted-foreground leading-relaxed text-sm font-medium">
+          <p className='text-muted-foreground text-sm leading-relaxed font-medium'>
             {hobby.description}
           </p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
+          <div className='flex flex-wrap gap-2 pt-2'>
             {hobby.tags.map((tag: string, tidx: number) => (
               <span
                 key={tidx}
-                className="px-3 py-1 rounded-full bg-background/30 border border-border/50 text-[10px] uppercase font-bold tracking-wider text-muted-foreground group-hover:border-primary/30 group-hover:text-primary transition-all"
+                className='bg-background/30 border-border/50 text-muted-foreground group-hover:border-primary/30 group-hover:text-primary rounded-full border px-3 py-1 text-[10px] font-bold tracking-wider uppercase transition-all'
               >
                 {tag}
               </span>
@@ -112,7 +121,7 @@ const HobbyCard = ({ hobby, index }: { hobby: any; index: number }) => {
       </div>
 
       {/* Hover Reveal Glow */}
-      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className='bg-primary/20 absolute top-0 right-0 h-32 w-32 translate-x-1/2 -translate-y-1/2 opacity-0 blur-[60px] transition-opacity group-hover:opacity-100' />
     </motion.div>
   )
 }

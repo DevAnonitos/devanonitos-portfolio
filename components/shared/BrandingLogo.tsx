@@ -6,9 +6,9 @@ const BrandingLogo = () => {
   return (
     <Link
       href='/'
-      className='group inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/70 px-3 py-1.5 text-sm font-semibold tracking-tight transition hover:border-primary/40 hover:bg-card'
+      className='group border-border/60 bg-card/70 hover:border-primary/40 hover:bg-card inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm font-semibold tracking-tight transition'
     >
-      <span className='h-2 w-2 rounded-full bg-primary transition group-hover:scale-110' />
+      <span className='bg-primary h-2 w-2 rounded-full transition group-hover:scale-110' />
       DevAnonitos
     </Link>
   )

@@ -1,8 +1,8 @@
-import { PrivacySection } from "@/components/sections"
+import { PrivacySection } from '@/components/sections'
 
 const PrivacyPage = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className='flex w-full flex-col'>
       <PrivacySection />
     </div>
   )

@@ -45,7 +45,7 @@ const NavbarItem = () => {
   return (
     <>
       <div className='hidden items-center gap-2 md:flex'>
-        <ul className='mr-2 flex items-center rounded-full border border-border/60 bg-card/60 p-1'>
+        <ul className='border-border/60 bg-card/60 mr-2 flex items-center rounded-full border p-1'>
           {NAV_LINKS.map((link) => {
             const isActive = link.href === activeHref
 
@@ -68,8 +68,6 @@ const NavbarItem = () => {
             )
           })}
         </ul>
-
-
       </div>
 
       {/* <div className='flex items-center gap-1 md:hidden'>

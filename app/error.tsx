@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { ErrorSection } from "@/components/sections"
+import { ErrorSection } from '@/components/sections'
 
 export default function ErrorPage({
   error,
@@ -10,7 +10,7 @@ export default function ErrorPage({
   reset: () => void
 }) {
   return (
-    <main className="flex flex-col w-full min-h-screen">
+    <main className='flex min-h-screen w-full flex-col'>
       <ErrorSection error={error} reset={reset} />
     </main>
   )

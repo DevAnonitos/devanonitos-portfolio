@@ -1,6 +1,6 @@
 # Professional Ideas & Feature Requests Template
-title: "💡 [Idea]: "
-labels: ["idea", "enhancement"]
+title: '💡 [Idea]: '
+labels: ['idea', 'enhancement']
 body:
   - type: markdown
     attributes:

@@ -16,7 +16,7 @@ interface FooterItemProps {
 const FooterItem = ({ title, links, className, onNavigate }: FooterItemProps) => {
   return (
     <div className={cn('space-y-3', className)}>
-      <h3 className='text-sm font-semibold tracking-wide text-foreground'>{title}</h3>
+      <h3 className='text-foreground text-sm font-semibold tracking-wide'>{title}</h3>
       <ul className='space-y-2'>
         {links.map((link) => (
           <li key={link.label}>
@@ -25,7 +25,7 @@ const FooterItem = ({ title, links, className, onNavigate }: FooterItemProps) =>
               prefetch={true}
               scroll={true}
               onClick={onNavigate}
-              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              className='text-muted-foreground hover:text-foreground text-sm transition-colors'
             >
               {link.label}
             </Link>

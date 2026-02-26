@@ -1,11 +1,7 @@
-import React from "react"
+import React from 'react'
 
 const LoadingSpinner = () => {
-  return (
-    <div>
-
-    </div>
-  )
+  return <div></div>
 }
 
-export default LoadingSpinner;
+export default LoadingSpinner

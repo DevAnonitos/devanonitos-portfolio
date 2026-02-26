@@ -1,19 +1,19 @@
-import { LucideIcon } from "lucide-react";
+import { LucideIcon } from 'lucide-react'
 
 export interface SkillItem {
-  name: string;
-  level: number;
-  icon: string;
+  name: string
+  level: number
+  icon: string
 }
 
 export interface SkillCategory {
-  category: string;
-  icon: string;
-  items: SkillItem[];
+  category: string
+  icon: string
+  items: SkillItem[]
 }
 
 export interface CategoryConfig {
-  icon: LucideIcon;
-  color: string;
-  glow: string;
+  icon: LucideIcon
+  color: string
+  glow: string
 }

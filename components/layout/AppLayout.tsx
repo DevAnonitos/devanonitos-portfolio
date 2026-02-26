@@ -8,11 +8,9 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className='relative flex w-full min-h-screen flex-col'>
+    <div className='relative flex min-h-screen w-full flex-col'>
       <Navbar />
-      <main className='grow mt-16 mx-auto w-full'>
-        {children}
-      </main>
+      <main className='mx-auto mt-16 w-full grow'>{children}</main>
       <Footer />
     </div>
   )

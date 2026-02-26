@@ -1,6 +1,6 @@
 # Professional Show and Tell Template
-title: "🙌 [Show & Tell]: "
-labels: ["showcase"]
+title: '🙌 [Show & Tell]: '
+labels: ['showcase']
 body:
   - type: markdown
     attributes:

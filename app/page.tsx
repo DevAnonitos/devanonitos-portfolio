@@ -1,27 +1,27 @@
-import React, { Suspense } from "react";
-import dynamic from "next/dynamic";
-import HeroSection from "@/components/sections/HeroSection";
-import { SectionLoading } from "@/components/shared";
+import React, { Suspense } from 'react'
+import dynamic from 'next/dynamic'
+import HeroSection from '@/components/sections/HeroSection'
+import { SectionLoading } from '@/components/shared'
 
-const StatsSection = dynamic(() => import("@/components/sections/StatsSection"), {
+const StatsSection = dynamic(() => import('@/components/sections/StatsSection'), {
   loading: () => <SectionLoading />,
-});
-const ServiceSection = dynamic(() => import("@/components/sections/ServiceSection"), {
+})
+const ServiceSection = dynamic(() => import('@/components/sections/ServiceSection'), {
   loading: () => <SectionLoading />,
-});
-const TestimonialSection = dynamic(() => import("@/components/sections/TestimonialSection"), {
+})
+const TestimonialSection = dynamic(() => import('@/components/sections/TestimonialSection'), {
   loading: () => <SectionLoading />,
-});
-const FAQSection = dynamic(() => import("@/components/sections/FAQSection"), {
+})
+const FAQSection = dynamic(() => import('@/components/sections/FAQSection'), {
   loading: () => <SectionLoading />,
-});
-const CTASection = dynamic(() => import("@/components/sections/CTASection"), {
+})
+const CTASection = dynamic(() => import('@/components/sections/CTASection'), {
   loading: () => <SectionLoading />,
-});
+})
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-full min-h-screen">
+    <main className='flex min-h-screen w-full flex-col'>
       <HeroSection />
 
       <Suspense fallback={<SectionLoading />}>
@@ -35,7 +35,7 @@ export default function Home() {
       <Suspense fallback={<SectionLoading />}>
         <TestimonialSection />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoading />}>
         <FAQSection />
       </Suspense>
@@ -44,6 +44,5 @@ export default function Home() {
         <CTASection />
       </Suspense>
     </main>
-  );
+  )
 }
-

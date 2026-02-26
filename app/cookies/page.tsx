@@ -1,8 +1,8 @@
-import { CookiesSection } from "@/components/sections"
+import { CookiesSection } from '@/components/sections'
 
 const CookiesPage = () => {
   return (
-    <main className="flex flex-col w-full min-h-screen">
+    <main className='flex min-h-screen w-full flex-col'>
       <CookiesSection />
     </main>
   )

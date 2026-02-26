@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
-import { useAnimation, useInView } from 'motion/react';
-import { useEffect, useRef } from 'react';
+import { useAnimation, useInView } from 'motion/react'
+import { useEffect, useRef } from 'react'
 
 interface ScrollRevealOptions {
-  once?: boolean;
-  amount?: number | 'some' | 'all';
+  once?: boolean
+  amount?: number | 'some' | 'all'
 }
 
 /**
@@ -14,18 +14,18 @@ interface ScrollRevealOptions {
  * @returns { ref, controls, isInView }
  */
 export function useScrollReveal(options: ScrollRevealOptions = {}) {
-  const { once = true, amount = 0.2 } = options;
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, amount });
-  const controls = useAnimation();
+  const { once = true, amount = 0.2 } = options
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once, amount })
+  const controls = useAnimation()
 
   useEffect(() => {
     if (isInView) {
-      controls.start('visible');
+      controls.start('visible')
     } else if (!once) {
-      controls.start('hidden');
+      controls.start('hidden')
     }
-  }, [isInView, controls, once]);
+  }, [isInView, controls, once])
 
-  return { ref, controls, isInView };
+  return { ref, controls, isInView }
 }

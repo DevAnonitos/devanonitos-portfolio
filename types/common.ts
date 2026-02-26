@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-export type Alignment = 'left' | 'center' | 'right';
+export type Alignment = 'left' | 'center' | 'right'
 
 export interface BaseProps {
-  className?: string;
-  children?: React.ReactNode;
+  className?: string
+  children?: React.ReactNode
 }
