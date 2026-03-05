@@ -60,7 +60,6 @@ jobs:
           # (`Resource not accessible by integration`). Enable Pages once in repo Settings > Pages
           # and choose 'GitHub Actions' as the source, then this workflow can deploy normally.
           enablement: false
-          enablement: true
           # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
           #
